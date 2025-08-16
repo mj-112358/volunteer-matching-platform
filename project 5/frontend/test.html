@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic Search Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8">AI Semantic Search Test</h1>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-xl font-semibold mb-4">Test Different Keywords</h2>
+            <p class="text-gray-600 mb-4">Try these examples to see how AI understands meaning, not just keywords:</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <button onclick="testQuery('programming')" class="bg-blue-500 text-white px-4 py-2 rounded">programming</button>
+                <button onclick="testQuery('coding')" class="bg-blue-500 text-white px-4 py-2 rounded">coding</button>
+                <button onclick="testQuery('software')" class="bg-blue-500 text-white px-4 py-2 rounded">software</button>
+                <button onclick="testQuery('tech')" class="bg-blue-500 text-white px-4 py-2 rounded">tech</button>
+                
+                <button onclick="testQuery('teaching')" class="bg-green-500 text-white px-4 py-2 rounded">teaching</button>
+                <button onclick="testQuery('education')" class="bg-green-500 text-white px-4 py-2 rounded">education</button>
+                <button onclick="testQuery('mentoring')" class="bg-green-500 text-white px-4 py-2 rounded">mentoring</button>
+                <button onclick="testQuery('training')" class="bg-green-500 text-white px-4 py-2 rounded">training</button>
+                
+                <button onclick="testQuery('environment')" class="bg-purple-500 text-white px-4 py-2 rounded">environment</button>
+                <button onclick="testQuery('sustainability')" class="bg-purple-500 text-white px-4 py-2 rounded">sustainability</button>
+                <button onclick="testQuery('climate')" class="bg-purple-500 text-white px-4 py-2 rounded">climate</button>
+                <button onclick="testQuery('green')" class="bg-purple-500 text-white px-4 py-2 rounded">green</button>
+            </div>
+            
+            <div class="flex gap-4">
+                <input type="text" id="customQuery" placeholder="Or type your own keyword..." class="flex-1 border rounded-lg px-4 py-2">
+                <button onclick="testCustom()" class="bg-orange-500 text-white px-6 py-2 rounded">Test</button>
+            </div>
+        </div>
+        
+        <div id="results" class="hidden">
+            <h2 class="text-xl font-semibold mb-4">Results</h2>
+            <div id="resultsList"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:4000';
+        
+        async function testQuery(query) {
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('resultsList').innerHTML = '<p class="text-gray-500">Searching...</p>';
+            
+            try {
+                const response = await fetch(`${API_BASE}/api/test/semantic`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query })
+                });
+                
+                const result = await response.json();
+                
+                if (result.ok) {
+                    let html = `
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <h3 class="font-semibold">Query: "${result.query}"</h3>
+                            <p class="text-sm text-gray-600 mt-2">AI created this profile text:</p>
+                            <p class="text-sm bg-white p-2 rounded mt-2">${result.testText}</p>
+                        </div>
+                    `;
+                    
+                    if (result.results.length > 0) {
+                        html += '<div class="space-y-4">';
+                        result.results.forEach(ngo => {
+                            html += `
+                                <div class="bg-white p-4 rounded-lg border">
+                                    <h4 class="font-semibold">${ngo.name}</h4>
+                                    <p class="text-green-600 font-medium">Match: ${ngo.score}</p>
+                                    <p class="text-sm text-gray-600">${ngo.matchReason}</p>
+                                </div>
+                            `;
+                        });
+                        html += '</div>';
+                    } else {
+                        html += '<p class="text-gray-500">No matches found</p>';
+                    }
+                    
+                    document.getElementById('resultsList').innerHTML = html;
+                } else {
+                    document.getElementById('resultsList').innerHTML = `<p class="text-red-500">Error: ${result.error}</p>`;
+                }
+            } catch (error) {
+                document.getElementById('resultsList').innerHTML = `<p class="text-red-500">Error: ${error.message}</p>`;
+            }
+        }
+        
+        function testCustom() {
+            const query = document.getElementById('customQuery').value.trim();
+            if (query) {
+                testQuery(query);
+            }
+        }
+        
+        // Allow Enter key in input
+        document.getElementById('customQuery').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                testCustom();
+            }
+        });
+    </script>
+</body>
+</html>
