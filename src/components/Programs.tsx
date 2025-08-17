@@ -67,7 +67,7 @@ const Programs: React.FC = () => {
   ];
 
   return (
-    <section id="programs" className="py-24 bg-gradient-to-b from-orange-50/40 via-white to-orange-25/30 relative overflow-hidden">
+    <section id="programs" className="py-12 bg-gradient-to-b from-orange-50/40 via-white to-orange-25/30 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-80 h-80 bg-gradient-to-r from-orange-200/25 to-orange-300/15 rounded-full blur-3xl animate-float-slow"></div>
@@ -76,7 +76,7 @@ const Programs: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Header */}
-        <div className="text-center mb-20 opacity-0 translate-y-20 transition-all duration-1000 animate-in-trigger">
+        <div className="text-center mb-12 opacity-0 translate-y-20 transition-all duration-1000 animate-in-trigger">
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-100/80 to-amber-100/60 backdrop-blur-sm border border-orange-200/50 text-orange-700 text-sm font-semibold mb-8 shadow-lg shadow-orange-500/10">
             <Sparkles className="w-4 h-4 mr-2 animate-spin-slow" />
             What We Offer

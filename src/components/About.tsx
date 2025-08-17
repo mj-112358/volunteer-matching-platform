@@ -213,6 +213,28 @@ const About: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {/* Call to Action */}
+          <div className="group p-8 rounded-3xl bg-gradient-to-br from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/30 transform opacity-0 translate-x-20 animate-card-3 cursor-pointer" style={{ animationDelay: '0.6s' }}>
+            <div className="text-center space-y-4">
+              <h3 className="text-2xl font-bold">Ready to Lead?</h3>
+              <p className="text-orange-100">Join thousands of students creating change across India</p>
+              <button 
+                onClick={() => {
+                  const element = document.getElementById('volunteer-matching');
+                  if (element) {
+                    const offset = 80;
+                    const elementPosition = element.offsetTop - offset;
+                    window.scrollTo({ top: elementPosition, behavior: 'smooth' });
+                  }
+                }}
+                className="inline-flex items-center bg-white text-orange-600 px-6 py-3 rounded-xl font-semibold hover:bg-orange-50 transition-all duration-200 hover:scale-105"
+              >
+                Start Your Journey
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
