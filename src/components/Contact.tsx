@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
       name: 'Deeva Choudhary',
       role: 'Head of Outreach',
       email: 'dchoudhary2@jpischool.com',
-      photo: '/images/team/aahvana pic .jpeg'
+      photo: '/images/team/deeva pic.jpeg'
     },
     {
       name: 'Aahvana Kapuria',
@@ -103,10 +103,6 @@ const Contact: React.FC = () => {
                 </div>
                 
                 <div className="text-center space-y-4">
-                  <div className="w-20 h-20 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <img 
-                      src={member.photo} 
-                      alt={member.name}
                       className="w-full h-full object-cover rounded-full border-4 border-orange-200 group-hover:border-orange-300 transition-colors duration-300"
                     />
                   </div>
