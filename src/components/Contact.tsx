@@ -115,7 +115,9 @@ const Contact: React.FC = () => {
                         <User className="w-8 h-8 text-white" />
                       </div>
                     )}
-                  </h3>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
                   
                   <div className="flex items-center justify-center text-orange-600 mb-3">
                     <Briefcase className="w-4 h-4 mr-2" />
