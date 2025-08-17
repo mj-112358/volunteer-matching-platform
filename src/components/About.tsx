@@ -124,28 +124,6 @@ const About: React.FC = () => {
                 </div>
               </div>
             </div>
-
-            {/* Mission & Vision */}
-            <div className="space-y-8">
-              <div className="space-y-6 p-8 bg-gradient-to-br from-white/90 to-orange-50/60 rounded-3xl border border-orange-200/30 backdrop-blur-sm shadow-lg shadow-orange-500/5">
-                <h3 className="text-2xl font-bold text-gray-900 flex items-center">
-                  <Target className="w-7 h-7 text-orange-500 mr-3" />
-                  Our Mission
-                </h3>
-                
-                <p className="text-lg text-gray-700 leading-relaxed font-light">
-                  To create a culture where every young person sees service not as an obligation, but as an opportunity — an opportunity to grow, to lead, and to transform someone else's life while transforming their own.
-                </p>
-              </div>
-
-              <div className="space-y-6 p-8 bg-gradient-to-br from-white/90 to-amber-50/60 rounded-3xl border border-amber-200/30 backdrop-blur-sm shadow-lg shadow-amber-500/5">
-                <h3 className="text-2xl font-bold text-gray-900 flex items-center">
-                  <Star className="w-7 h-7 text-amber-500 mr-3" />
-                  Our Vision
-                </h3>
-                
-                <p className="text-lg text-gray-700 leading-relaxed font-light">
-                  We imagine a future where service is as natural as breathing — where every student graduates not only with grades, but with stories of lives they've touched.
                 </p>
               </div>
             </div>
@@ -214,27 +192,6 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Call to Action */}
-          <div className="group p-8 rounded-3xl bg-gradient-to-br from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/30 transform opacity-0 translate-x-20 animate-card-3 cursor-pointer" style={{ animationDelay: '0.6s' }}>
-            <div className="text-center space-y-4">
-              <h3 className="text-2xl font-bold">Ready to Lead?</h3>
-              <p className="text-orange-100">Join thousands of students creating change across India</p>
-              <button 
-                onClick={() => {
-                  const element = document.getElementById('volunteer-matching');
-                  if (element) {
-                    const offset = 80;
-                    const elementPosition = element.offsetTop - offset;
-                    window.scrollTo({ top: elementPosition, behavior: 'smooth' });
-                  }
-                }}
-                className="inline-flex items-center bg-white text-orange-600 px-6 py-3 rounded-xl font-semibold hover:bg-orange-50 transition-all duration-200 hover:scale-105"
-              >
-                Start Your Journey
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </section>
