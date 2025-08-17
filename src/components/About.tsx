@@ -35,8 +35,70 @@ const About: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
-          {/* Left Content - Main Story */}
-          <div className="lg:col-span-7 space-y-8 opacity-0 translate-y-20 transition-all duration-1000 delay-200 animate-in-trigger">
+          {/* Left Content - Fire Story */}
+          <div className="lg:col-span-7 space-y-8">
+            <div className="space-y-8">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100/80 backdrop-blur-sm border border-orange-200/50 text-orange-700 text-sm font-medium shadow-lg shadow-orange-500/10">
+                <Zap className="w-4 h-4 mr-2" />
+                The Revolution
+              </div>
+              
+              <h2 className="text-5xl md:text-6xl font-black text-gray-900 leading-tight tracking-tight">
+                This Is How
+                <span className="block bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+                  Legends Begin
+                </span>
+              </h2>
+              
+              <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+                <div className="text-2xl font-black text-gray-900 leading-tight">
+                  Mauka didn't start in a boardroom. It started in frustration.
+                </div>
+                
+                <div className="text-lg leading-relaxed">
+                  Picture this: thousands of students burning with the desire to serve, and thousands of NGOs desperately needing help. Yet they existed in parallel universes, never meeting. The bridge didn't exist. So we didn't wait for someone else to build it.
+                </div>
+                
+                <div className="text-xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+                  We became the bridge.
+                </div>
+                
+                <div className="p-6 bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl border border-orange-200/50 backdrop-blur-sm">
+                  <div className="text-lg font-bold text-orange-800 mb-3">In just a few months, we achieved the impossible:</div>
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div className="p-3 bg-white/60 rounded-xl">
+                      <div className="text-2xl font-black text-orange-600">3,000+</div>
+                      <div className="text-sm text-gray-700 font-medium">Volunteers</div>
+                    </div>
+                    <div className="p-3 bg-white/60 rounded-xl">
+                      <div className="text-2xl font-black text-orange-600">7,200</div>
+                      <div className="text-sm text-gray-700 font-medium">Service Hours</div>
+                    </div>
+                    <div className="p-3 bg-white/60 rounded-xl">
+                      <div className="text-2xl font-black text-orange-600">78</div>
+                      <div className="text-sm text-gray-700 font-medium">Partner NGOs</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="text-lg leading-relaxed">
+                  But numbers are just the beginning. The real magic happens when a quiet teenager discovers their voice mentoring younger children. When a science enthusiast runs her first experiment with kids who've never seen a lab. When a football player organizes the first proper match in a village with real equipment.
+                </div>
+                
+                <div className="text-2xl font-black bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+                  That is the power of a mauka — a chance.
+                </div>
+                
+                <div className="text-xl font-bold text-gray-900">
+                  Young people aren't the leaders of tomorrow. They are leaders today.
+                </div>
+                
+                <div className="text-lg leading-relaxed">
+                  We're not counting hours for certificates. We're building stories. We're connecting souls who would never have met otherwise. We're proving that the smallest idea in the right hands can ripple outward into unstoppable change.
+                </div>
+              </div>
+            </div>
+          </div>
             <div className="space-y-8">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100/80 backdrop-blur-sm border border-orange-200/50 text-orange-700 text-sm font-medium shadow-lg shadow-orange-500/10">
                 <Zap className="w-4 h-4 mr-2" />
