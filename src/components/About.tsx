@@ -124,7 +124,6 @@ const About: React.FC = () => {
                 </div>
               </div>
             </div>
-                </p>
               </div>
             </div>
           </div>
