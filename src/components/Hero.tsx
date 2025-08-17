@@ -136,3 +136,5 @@ export default Hero;
                 </span>
                 <span className="inline-block animate-slide-up-5 text-orange-600 drop-shadow-lg">.</span>
               </h1>
+  )
+}
