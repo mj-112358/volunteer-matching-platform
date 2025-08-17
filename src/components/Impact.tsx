@@ -109,7 +109,7 @@ const Impact: React.FC = () => {
 
         {/* Impact Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          <div className="group text-center p-8 rounded-3xl bg-white/90 backdrop-blur-sm border border-orange-100/50 hover:border-orange-200 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:scale-105">
+          <div className="group text-center p-8 rounded-3xl bg-white/90 backdrop-blur-sm border border-orange-100/50 hover:border-orange-200 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:scale-105 md:col-span-1 lg:col-span-1">
             <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent mb-3">
               3,000+
             </div>
@@ -121,7 +121,7 @@ const Impact: React.FC = () => {
             </p>
           </div>
 
-          <div className="group text-center p-8 rounded-3xl bg-white/90 backdrop-blur-sm border border-orange-100/50 hover:border-orange-200 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:scale-105">
+          <div className="group text-center p-8 rounded-3xl bg-white/90 backdrop-blur-sm border border-orange-100/50 hover:border-orange-200 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:scale-105 md:col-span-1 lg:col-span-1">
             <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent mb-3">
               7,200
             </div>
@@ -133,7 +133,7 @@ const Impact: React.FC = () => {
             </p>
           </div>
 
-          <div className="group text-center p-8 rounded-3xl bg-white/90 backdrop-blur-sm border border-orange-100/50 hover:border-orange-200 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:scale-105">
+          <div className="group text-center p-8 rounded-3xl bg-white/90 backdrop-blur-sm border border-orange-100/50 hover:border-orange-200 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:scale-105 md:col-span-2 lg:col-span-2">
             <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent mb-3">
               78
             </div>
@@ -142,18 +142,6 @@ const Impact: React.FC = () => {
             </div>
             <p className="text-sm text-gray-600 leading-relaxed">
               Organizations we collaborate with
-            </p>
-          </div>
-
-          <div className="group text-center p-8 rounded-3xl bg-white/90 backdrop-blur-sm border border-orange-100/50 hover:border-orange-200 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:scale-105">
-            <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent mb-3">
-              25+
-            </div>
-            <div className="text-lg font-bold text-gray-900 mb-2">
-              Cities Reached
-            </div>
-            <p className="text-sm text-gray-600 leading-relaxed">
-              Communities transformed nationwide
             </p>
           </div>
         </div>
