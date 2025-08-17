@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Spline from '@splinetool/react-spline';
 
 const Hero: React.FC = () => {
@@ -23,51 +23,65 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-white">
+    <section id="home" ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-white pt-16">
       <div className="max-w-7xl mx-auto px-6 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center py-20">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Left Side - Text Content */}
-          <div ref={textRef} className="space-y-8 lg:pr-8">
-            {/* Main Headline with Stagger Animation */}
-            <div className="space-y-6">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-[0.85] tracking-tighter drop-shadow-lg">
-                <span className="inline-block bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent animate-slide-up-1 hover:scale-105 transition-transform duration-500 cursor-default drop-shadow-lg">
+          <div ref={textRef} className="space-y-6">
+            {/* Main Headline */}
+            <div className="space-y-4">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-gray-900 leading-[0.85] tracking-tighter">
+                <span className="inline-block bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent hover:scale-105 transition-transform duration-500 cursor-default">
                   Mauka
                 </span>
               </h1>
-              <h2 className="text-2xl md:text-3xl text-gray-900 font-bold animate-slide-up-2">
+              
+              <h2 className="text-2xl md:text-3xl text-gray-900 font-bold">
                 One Mauka Can Change a Life
               </h2>
+            </div>
           
-              {/* Sub-headline */}
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-semibold animate-fade-in-up-delayed">
+            {/* Body Content - Engaging Format */}
+            <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+              <div className="font-semibold text-xl text-gray-900">
                 Mauka is more than a volunteering platform. It's a movement of young people who believe that service is not just something you do on weekends — it's something that shapes who you are.
-              </p>
+              </div>
               
-              {/* Body Content */}
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed animate-fade-in-up-more-delayed">
-                At Mauka, we've seen what happens when students are given the chance to serve. A quiet teenager becomes a mentor for younger children. A science enthusiast runs her first experiment with kids who've never entered a lab. A football player sets up a match in a village field, and for those kids, it's the first time they've played with proper gear.
-              </p>
+              <div>
+                At Mauka, we've seen what happens when students are given the chance to serve:
+              </div>
               
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed animate-fade-in-up-more-delayed">
-                <strong className="text-orange-600">That is the power of a mauka — a chance.</strong>
-              </p>
+              <ul className="space-y-2 ml-4">
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-orange-500 rounded-full mt-3 mr-3 flex-shrink-0"></span>
+                  A quiet teenager becomes a mentor for younger children
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-orange-500 rounded-full mt-3 mr-3 flex-shrink-0"></span>
+                  A science enthusiast runs her first experiment with kids who've never entered a lab
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-orange-500 rounded-full mt-3 mr-3 flex-shrink-0"></span>
+                  A football player sets up a match in a village field with proper gear for the first time
+                </li>
+              </ul>
               
-              <div className="p-4 bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl border border-orange-200/50 animate-fade-in-up-more-delayed">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Our Belief:</h3>
-                <p className="text-lg text-orange-700 font-semibold">
-                  Young people aren't the leaders of tomorrow. They are leaders today.
-                </p>
+              <div className="text-xl font-bold text-orange-600">
+                That is the power of a mauka — a chance.
+              </div>
+              
+              <div className="text-xl font-bold text-gray-900">
+                Young people aren't the leaders of tomorrow. They are leaders today.
               </div>
             </div>
           
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up-more-delayed">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a 
                 href="#volunteer-matching"
-                className="group relative bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/50 transform magnetic-button"
+                className="group relative bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/50 transform"
               >
-                <span className="relative z-10 flex items-center">
+                <span className="relative z-10 flex items-center justify-center">
                   Become a Volunteer
                   <ArrowRight className="ml-3 w-5 h-5 transform group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300" />
                 </span>
@@ -77,7 +91,7 @@ const Hero: React.FC = () => {
                 href="#volunteer-matching"
                 className="group relative bg-white border-2 border-orange-500 text-orange-600 hover:bg-orange-50 px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/30 transform"
               >
-                <span className="relative z-10 flex items-center">
+                <span className="relative z-10 flex items-center justify-center">
                   Partner as an NGO
                   <ArrowRight className="ml-3 w-5 h-5 transform group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300" />
                 </span>
@@ -90,40 +104,40 @@ const Hero: React.FC = () => {
                   window.location.hash = 'donate';
                   window.location.reload();
                 }}
-                className="group relative bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-amber-500/50 transform magnetic-button"
+                className="group relative bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-amber-500/50 transform"
               >
-                <span className="relative z-10 flex items-center">
+                <span className="relative z-10 flex items-center justify-center">
                   Support with a Donation
                   <ArrowRight className="ml-3 w-5 h-5 transform group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300" />
                 </span>
               </a>
             </div>
+          </div>
         
-        {/* Right Side - Spline Animation */}
-        <div className="relative h-[500px] lg:h-[600px] w-full">
-          <div className="w-full h-full bg-white rounded-lg overflow-hidden">
-            <Spline
-              scene="https://prod.spline.design/AcYRTcXVvLwcRDdr/scene.splinecode"
-              style={{
-                width: '100%',
-                height: '100%',
-                backgroundColor: '#ffffff'
-              }}
-            />
+          {/* Right Side - Spline Animation */}
+          <div className="relative h-[500px] w-full">
+            <div className="w-full h-full bg-white rounded-lg overflow-hidden">
+              <Spline
+                scene="https://prod.spline.design/AcYRTcXVvLwcRDdr/scene.splinecode"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  backgroundColor: '#ffffff'
+                }}
+              />
+            </div>
           </div>
         </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center backdrop-blur-sm">
+          <div className="w-1 h-3 bg-gray-600 rounded-full mt-2 animate-scroll-indicator"></div>
         </div>
       </div>
-    </div>
-
-    {/* Scroll Indicator */}
-    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-      <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center backdrop-blur-sm">
-        <div className="w-1 h-3 bg-gray-600 rounded-full mt-2 animate-scroll-indicator"></div>
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
 };
 
 export default Hero;

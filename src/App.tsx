@@ -30,14 +30,13 @@ function App() {
         return <Privacy />;
       case 'terms':
         return <Terms />;
-      case 'leaderboard':
-        return <Leaderboard />;
       default:
         return (
           <>
             <Hero />
             <About />
             <Programs />
+            <Leaderboard />
             <Impact />
             <GetInvolved />
             <VolunteerMatching />

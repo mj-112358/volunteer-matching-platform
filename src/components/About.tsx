@@ -56,6 +56,10 @@ const About: React.FC = () => {
                 </p>
                 
                 <p>
+                  In just a few months, Mauka has grown into a network of <strong>3,000+ volunteers</strong>, <strong>7,200 hours of service</strong>, and <strong>78 partner NGOs</strong>. But we're not counting hours for the sake of certificates. We're building stories. We're connecting people who would never have met otherwise. And we're proving that the smallest idea in the right hands can ripple outward into real change.
+                </p>
+                
+                <p>
                   But numbers are only half the story. The real impact lies in the classroom where a child learns to read because a Mauka volunteer sat with her every evening. It lies in the confidence of a volunteer who realised their voice could actually make someone's day better. It lies in the conversations — messy, imperfect, but deeply human — that happen when students and communities come together.
                 </p>
                 
@@ -170,6 +174,42 @@ const About: React.FC = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Recognition Section */}
+        <div className="mt-20">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Recognition & Awards</h3>
+            <p className="text-gray-600">Mauka's impact has been recognized by leading organizations across India</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="p-6 bg-white/80 backdrop-blur-sm border border-orange-100/50 rounded-2xl hover:shadow-lg transition-all duration-300">
+              <h4 className="font-bold text-gray-900 mb-2">Media Recognition</h4>
+              <ul className="text-gray-600 space-y-1 text-sm">
+                <li>• Featured in City Bhaskar newspaper</li>
+                <li>• Featured in First India Newspaper</li>
+              </ul>
+            </div>
+            
+            <div className="p-6 bg-white/80 backdrop-blur-sm border border-orange-100/50 rounded-2xl hover:shadow-lg transition-all duration-300">
+              <h4 className="font-bold text-gray-900 mb-2">National Awards</h4>
+              <ul className="text-gray-600 space-y-1 text-sm">
+                <li>• Indian Achiever's Forum Recognition</li>
+                <li>• iVolunteer Youth Champion Finalist</li>
+                <li>• Pramerica Life Insurance Silver Medallion</li>
+              </ul>
+            </div>
+            
+            <div className="p-6 bg-white/80 backdrop-blur-sm border border-orange-100/50 rounded-2xl hover:shadow-lg transition-all duration-300">
+              <h4 className="font-bold text-gray-900 mb-2">Institutional Recognition</h4>
+              <ul className="text-gray-600 space-y-1 text-sm">
+                <li>• Best Initiative at JPIS (2022-2023)</li>
+                <li>• Selected from 2,200+ projects nationwide</li>
+                <li>• Only Rajasthani awardee in category</li>
+              </ul>
             </div>
           </div>
         </div>

@@ -30,22 +30,22 @@ const Navigation: React.FC = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
+            <a href="#home" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
               Home
             </a>
-            <a href="#about" className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
+            <a href="#about" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
               About
             </a>
-            <a href="#programs" className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
+            <a href="#programs" onClick={(e) => { e.preventDefault(); document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
               Programs
             </a>
-            <a href="#impact" className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
+            <a href="#impact" onClick={(e) => { e.preventDefault(); document.getElementById('impact')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
               Impact
             </a>
-            <a href="#leaderboard" className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
+            <a href="#leaderboard" onClick={(e) => { e.preventDefault(); document.getElementById('leaderboard')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
               Leaderboard
             </a>
-            <a href="#volunteer-matching" className="text-sm font-medium text-violet-700 hover:text-violet-900 transition-all duration-300 hover:scale-105">
+            <a href="#volunteer-matching" onClick={(e) => { e.preventDefault(); document.getElementById('volunteer-matching')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sm font-medium text-violet-700 hover:text-violet-900 transition-all duration-300 hover:scale-105">
               AI Matching
             </a>
             <a 
