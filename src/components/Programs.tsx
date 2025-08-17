@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { GraduationCap, Briefcase, Users, BookOpen, ArrowUpRight, Sparkles, Target, Lightbulb } from 'lucide-react';
+import { GraduationCap, Briefcase, Users, BookOpen, ArrowUpRight, Sparkles, Target, Lightbulb, ArrowRight } from 'lucide-react';
 
 const Programs: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
