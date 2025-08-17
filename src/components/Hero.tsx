@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
               </h1>
               
               <h2 className="text-3xl md:text-4xl text-gray-900 font-bold leading-tight">
-                One Mauka Can Change a Life
+                Seize your opportunity. Seize your Mauka.
               </h2>
             </div>
           
@@ -57,29 +57,6 @@ const Hero: React.FC = () => {
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
               <div className="text-xl font-bold text-gray-900 leading-relaxed">
                 Mauka isn't just a platform. It's a revolution of young hearts who refuse to wait for tomorrow to change the world.
-              </div>
-              
-              <div className="text-lg leading-relaxed">
-                We've witnessed magic happen when students are given the chance to serve:
-              </div>
-              
-              <div className="grid gap-4">
-                <div className="flex items-start group">
-                  <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full mt-2 mr-4 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
-                  <span className="group-hover:text-gray-900 transition-colors duration-300">A quiet teenager discovers their voice mentoring younger children</span>
-                </div>
-                <div className="flex items-start group">
-                  <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full mt-2 mr-4 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
-                  <span className="group-hover:text-gray-900 transition-colors duration-300">A science enthusiast runs her first experiment with kids who've never seen a lab</span>
-                </div>
-                <div className="flex items-start group">
-                  <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full mt-2 mr-4 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
-                  <span className="group-hover:text-gray-900 transition-colors duration-300">A football player organizes the first proper match in a village with real equipment</span>
-                </div>
-              </div>
-              
-              <div className="text-2xl font-black bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
-                That is the power of a mauka — a chance.
               </div>
             </div>
           

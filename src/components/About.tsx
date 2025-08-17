@@ -58,6 +58,29 @@ const About: React.FC = () => {
                   Picture this: thousands of students burning with the desire to serve, and thousands of NGOs desperately needing help. Yet they existed in parallel universes, never meeting. The bridge didn't exist.
                 </div>
                 
+                <div className="text-lg leading-relaxed">
+                  We've witnessed magic happen when students are given the chance to serve:
+                </div>
+                
+                <div className="grid gap-4">
+                  <div className="flex items-start group">
+                    <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full mt-2 mr-4 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                    <span className="group-hover:text-gray-900 transition-colors duration-300">A quiet teenager discovers their voice mentoring younger children</span>
+                  </div>
+                  <div className="flex items-start group">
+                    <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full mt-2 mr-4 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                    <span className="group-hover:text-gray-900 transition-colors duration-300">A science enthusiast runs her first experiment with kids who've never seen a lab</span>
+                  </div>
+                  <div className="flex items-start group">
+                    <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full mt-2 mr-4 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                    <span className="group-hover:text-gray-900 transition-colors duration-300">A football player organizes the first proper match in a village with real equipment</span>
+                  </div>
+                </div>
+                
+                <div className="text-2xl font-black bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+                  That is the power of a mauka — a chance.
+                </div>
+                
                 <div className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
                   So we became the bridge.
                 </div>
