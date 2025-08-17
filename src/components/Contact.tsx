@@ -99,6 +99,10 @@ const Contact: React.FC = () => {
             {teamMembers.map((member, index) => (
               <div key={index} className="group p-8 rounded-3xl bg-white/80 backdrop-blur-sm border border-orange-100/50 hover:border-orange-200 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:scale-105 transform">
                 <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <User className="w-8 h-8 text-white" />
+                </div>
+                
+                <div className="text-center space-y-4">
                   <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border-4 border-orange-200 group-hover:border-orange-300 transition-colors duration-300">
                     <img 
                       src={member.photo}
