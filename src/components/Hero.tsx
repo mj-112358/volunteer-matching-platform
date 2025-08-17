@@ -81,10 +81,6 @@ const Hero: React.FC = () => {
               <div className="text-2xl font-black bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
                 That is the power of a mauka — a chance.
               </div>
-              
-              <div className="text-xl font-bold text-gray-900">
-                Young people aren't the leaders of tomorrow. They are leaders today.
-              </div>
             </div>
           
             {/* CTA Buttons */}

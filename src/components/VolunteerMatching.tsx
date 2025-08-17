@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Users, Building2, Sparkles, ArrowRight, Loader2, X, Mail, Phone, Brain } from 'lucide-react';
+import { Users, Building2, Sparkles, ArrowRight, Loader2, X, Mail, Phone, Brain, Zap } from 'lucide-react';
 
 const API_BASE = 'http://localhost:4000';
 
@@ -48,7 +48,6 @@ const VolunteerMatching: React.FC = () => {
 		};
 
 		try {
-			// Register volunteer
 			const registerResponse = await fetch(`${API_BASE}/api/profile/upsert`, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
@@ -61,7 +60,6 @@ const VolunteerMatching: React.FC = () => {
 				return;
 			}
 
-			// Get NGO recommendations
 			const recommendResponse = await fetch(`${API_BASE}/api/recommend/ngos`, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
@@ -97,8 +95,6 @@ const VolunteerMatching: React.FC = () => {
 		setLoading(true);
 		setError('');
 		setSuccess('');
-		e.preventDefault();
-		setLoading(true);
     
 		const formData = new FormData(e.target as HTMLFormElement);
 		const ngoData = {
@@ -114,7 +110,6 @@ const VolunteerMatching: React.FC = () => {
 		};
 
 		try {
-			// Register NGO
 			const registerResponse = await fetch(`${API_BASE}/api/profile/upsert`, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
@@ -124,7 +119,6 @@ const VolunteerMatching: React.FC = () => {
 			const registerResult = await registerResponse.json();
 			if (!registerResult.ok) throw new Error(registerResult.error);
 
-			// Get volunteer recommendations
 			const recommendResponse = await fetch(`${API_BASE}/api/recommend/volunteers`, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
@@ -188,127 +182,150 @@ const VolunteerMatching: React.FC = () => {
 		}
 	};
 
+	const seedData = async () => {
+		try {
+			const response = await fetch(`${API_BASE}/api/seed`, { method: 'POST' });
+			const result = await response.json();
+			if (result.ok) {
+				setSuccess(`✅ Added ${result.ngos} NGOs and ${result.volunteers} volunteers!`);
+			}
+		} catch (error) {
+			console.error('Error:', error);
+			setError('Failed to add sample data');
+		}
+	};
+
 	const closeContactModal = () => {
 		setShowContactModal(false);
 		setSelectedContact(null);
 	};
 
 	return (
-		<section id="volunteer-matching" className="py-32 bg-gradient-to-br from-orange-50 via-white to-amber-50 relative overflow-hidden">
+		<section id="volunteer-matching" className="py-24 bg-gradient-to-br from-white via-orange-25/20 to-amber-50/30 relative overflow-hidden">
 			{/* Background Effects */}
 			<div className="absolute inset-0">
-				<div className="absolute top-0 right-0 w-96 h-96 bg-orange-100 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-				<div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-100 rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+				<div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-100/20 rounded-full blur-3xl opacity-60 animate-pulse"></div>
+				<div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-amber-100/15 rounded-full blur-3xl opacity-60 animate-pulse" style={{ animationDelay: '1s' }}></div>
 			</div>
 
-			<div className="relative max-w-6xl mx-auto px-6">
+			<div className="relative max-w-7xl mx-auto px-6">
 				{/* Error and Success Messages */}
 				{error && (
-					<div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+					<div className="mb-8 p-6 bg-red-50/90 backdrop-blur-sm border border-red-200/50 rounded-2xl text-red-700 shadow-lg shadow-red-500/10">
 						<div className="flex items-center">
-							<span className="text-red-500 mr-2">⚠️</span>
-							{error}
+							<span className="text-red-500 mr-3 text-xl">⚠️</span>
+							<span className="font-medium">{error}</span>
 						</div>
 					</div>
 				)}
 				{success && (
-					<div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
+					<div className="mb-8 p-6 bg-green-50/90 backdrop-blur-sm border border-green-200/50 rounded-2xl text-green-700 shadow-lg shadow-green-500/10">
 						<div className="flex items-center">
-							<span className="text-green-500 mr-2">✅</span>
-							{success}
+							<span className="text-green-500 mr-3 text-xl">✅</span>
+							<span className="font-medium">{success}</span>
 						</div>
 					</div>
 				)}
 
 				{/* Header */}
-				<div className="text-center mb-16">
-					<div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-50 border border-orange-200/50 text-orange-700 text-sm font-medium mb-6">
-						<Sparkles className="w-4 h-4 mr-2" />
+				<div className="text-center mb-20">
+					<div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-100/80 to-amber-100/60 backdrop-blur-sm border border-orange-200/50 text-orange-700 text-sm font-semibold mb-8 shadow-lg shadow-orange-500/10">
+						<Sparkles className="w-4 h-4 mr-2 animate-spin-slow" />
 						AI-Powered Matching
 					</div>
           
-					<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+					<h2 className="text-6xl md:text-7xl font-black text-gray-900 mb-8 tracking-tighter leading-[0.9]">
 						Find Your Perfect
-						<span className="block bg-gradient-to-r from-orange-600 via-amber-600 to-orange-700 bg-clip-text text-transparent">
+						<span className="block bg-gradient-to-r from-orange-600 via-orange-500 to-amber-600 bg-clip-text text-transparent">
 							Volunteer Match
 						</span>
 					</h2>
           
-					<p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-						Our AI understands your passions and connects you with meaningful opportunities
+					<p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
+						Our AI understands your passions and connects you with meaningful opportunities that align with your values and skills
 					</p>
+
+					<button 
+						onClick={seedData}
+						className="mt-8 inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-100 to-purple-200 hover:from-purple-200 hover:to-purple-300 text-purple-700 rounded-2xl transition-all duration-300 text-sm font-semibold border border-purple-200 hover:scale-105 shadow-lg shadow-purple-500/10"
+					>
+						🌱 Add Sample Data
+					</button>
 				</div>
 
 				{/* Navigation Tabs */}
-				<div className="flex justify-center mb-12">
-					<div className="bg-white rounded-2xl p-2 border border-gray-200/50 shadow-lg shadow-gray-200/50">
+				<div className="flex justify-center mb-16">
+					<div className="bg-white/90 backdrop-blur-sm rounded-3xl p-3 border border-gray-200/50 shadow-xl shadow-gray-200/20">
 						<button
 							onClick={() => setActiveTab('volunteer')}
-							className={`inline-flex items-center px-6 py-3 rounded-xl font-medium transition-all duration-200 ${
+							className={`inline-flex items-center px-8 py-4 rounded-2xl font-semibold transition-all duration-300 ${
 								activeTab === 'volunteer'
-									? 'bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-lg'
+									? 'bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-lg shadow-orange-500/30'
 									: 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
 							}`}
 						>
-							<Users className="w-4 h-4 mr-2" />
+							<Users className="w-5 h-5 mr-3" />
 							I'm a Volunteer
 						</button>
             
 						<button
 							onClick={() => setActiveTab('ngo')}
-							className={`inline-flex items-center px-6 py-3 rounded-xl font-medium transition-all duration-200 ${
+							className={`inline-flex items-center px-8 py-4 rounded-2xl font-semibold transition-all duration-300 ${
 								activeTab === 'ngo'
-									? 'bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-lg'
+									? 'bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-lg shadow-orange-500/30'
 									: 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
 							}`}
 						>
-							<Building2 className="w-4 h-4 mr-2" />
+							<Building2 className="w-5 h-5 mr-3" />
 							I'm an NGO
 						</button>
             
 						<button
 							onClick={() => setActiveTab('semantic')}
-							className={`inline-flex items-center px-6 py-3 rounded-xl font-medium transition-all duration-200 ${
+							className={`inline-flex items-center px-8 py-4 rounded-2xl font-semibold transition-all duration-300 ${
 								activeTab === 'semantic'
-									? 'bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-lg'
+									? 'bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-lg shadow-orange-500/30'
 									: 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
 							}`}
 						>
-							<Brain className="w-4 h-4 mr-2" />
+							<Brain className="w-5 h-5 mr-3" />
 							AI Search Test
 						</button>
 					</div>
 				</div>
 
 				{/* Content */}
-				<div className="max-w-4xl mx-auto">
+				<div className="max-w-5xl mx-auto">
 					{/* Volunteer Form */}
 					{activeTab === 'volunteer' && (
-						<div className="bg-white rounded-3xl p-8 border border-gray-200/50 shadow-xl shadow-gray-200/50">
-							<h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-								Find NGOs That Need Your Skills
-							</h3>
+						<div className="bg-white/95 backdrop-blur-sm rounded-3xl p-12 border border-gray-200/50 shadow-2xl shadow-gray-200/20">
+							<div className="text-center mb-10">
+								<h3 className="text-3xl font-bold text-gray-900 mb-4">
+									Find NGOs That Need Your Skills
+								</h3>
+								<p className="text-gray-600 text-lg">Connect with organizations that align with your passions and expertise</p>
+							</div>
               
-							<form onSubmit={handleVolunteerSubmit} className="space-y-6">
+							<form onSubmit={handleVolunteerSubmit} className="space-y-8">
 								<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 									<div>
-										<label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+										<label className="block text-sm font-semibold text-gray-700 mb-3">Full Name</label>
 										<input
 											type="text"
 											name="name"
 											required
-											className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+											className="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
 											placeholder="Enter your name"
 										/>
 									</div>
                   
 									<div>
-										<label className="block text-sm font-medium text-gray-700 mb-2">City</label>
+										<label className="block text-sm font-semibold text-gray-700 mb-3">City</label>
 										<input
 											type="text"
 											name="city"
 											required
-											className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+											className="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
 											placeholder="Your city"
 										/>
 									</div>
@@ -316,77 +333,77 @@ const VolunteerMatching: React.FC = () => {
 
 								<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 									<div>
-										<label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+										<label className="block text-sm font-semibold text-gray-700 mb-3">Email</label>
 										<input
 											type="email"
 											name="email"
 											required
-											className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+											className="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
 											placeholder="your.email@example.com"
 										/>
 									</div>
                   
 									<div>
-										<label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+										<label className="block text-sm font-semibold text-gray-700 mb-3">Phone Number</label>
 										<input
 											type="tel"
 											name="phone"
 											required
-											className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+											className="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
 											placeholder="+1 (555) 123-4567"
 										/>
 									</div>
 								</div>
                 
 								<div>
-									<label className="block text-sm font-medium text-gray-700 mb-2">Skills</label>
+									<label className="block text-sm font-semibold text-gray-700 mb-3">Skills</label>
 									<textarea
 										name="skills"
-										rows={2}
-										className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-										placeholder="web development, teaching, marketing, design..."
+										rows={3}
+										className="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
+										placeholder="web development, teaching, marketing, design, photography..."
 									/>
 								</div>
                 
 								<div>
-									<label className="block text-sm font-medium text-gray-700 mb-2">Interests</label>
+									<label className="block text-sm font-semibold text-gray-700 mb-3">Interests</label>
 									<textarea
 										name="interests"
-										rows={2}
-										className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-										placeholder="education, environment, healthcare, technology..."
+										rows={3}
+										className="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
+										placeholder="education, environment, healthcare, technology, arts..."
 									/>
 								</div>
                 
 								<div>
-									<label className="block text-sm font-medium text-gray-700 mb-2">Availability</label>
+									<label className="block text-sm font-semibold text-gray-700 mb-3">Availability</label>
 									<input
 										type="text"
 										name="availability"
-										className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-										placeholder="weekends, 10 hours/week, flexible..."
+										className="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
+										placeholder="weekends, 10 hours/week, flexible, evenings..."
 									/>
 								</div>
                 
 								<div>
-									<label className="block text-sm font-medium text-gray-700 mb-2">About You</label>
+									<label className="block text-sm font-semibold text-gray-700 mb-3">About You</label>
 									<textarea
 										name="bio"
-										rows={3}
-										className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-										placeholder="Tell us about your passion for volunteering..."
+										rows={4}
+										className="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
+										placeholder="Tell us about your passion for volunteering and what drives you to make a difference..."
 									/>
 								</div>
                 
 								<button
 									type="submit"
 									disabled={loading}
-									className="w-full bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white py-4 rounded-xl font-medium transition-all duration-200 hover:scale-[1.02] hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+									className="w-full bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white py-5 rounded-2xl font-bold text-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-orange-500/30 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
 								>
 									{loading ? (
-										<Loader2 className="w-5 h-5 animate-spin mr-2" />
+										<Loader2 className="w-6 h-6 animate-spin mr-3" />
 									) : (
-										<Sparkles className="w-5 h-5 mr-2" />
+										<Sparkles className="w-6 h-6 mr-3" />
 									)}
 									Find My Perfect NGO Match
 								</button>
@@ -396,31 +413,34 @@ const VolunteerMatching: React.FC = () => {
 
 					{/* NGO Form */}
 					{activeTab === 'ngo' && (
-						<div className="bg-white rounded-3xl p-8 border border-gray-200/50 shadow-xl shadow-gray-200/50">
-							<h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-								Find Volunteers Who Share Your Mission
-							</h3>
+						<div className="bg-white/95 backdrop-blur-sm rounded-3xl p-12 border border-gray-200/50 shadow-2xl shadow-gray-200/20">
+							<div className="text-center mb-10">
+								<h3 className="text-3xl font-bold text-gray-900 mb-4">
+									Find Volunteers Who Share Your Mission
+								</h3>
+								<p className="text-gray-600 text-lg">Connect with passionate young people ready to support your cause</p>
+							</div>
               
-							<form onSubmit={handleNgoSubmit} className="space-y-6">
+							<form onSubmit={handleNgoSubmit} className="space-y-8">
 								<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 									<div>
-										<label className="block text-sm font-medium text-gray-700 mb-2">Organization Name</label>
+										<label className="block text-sm font-semibold text-gray-700 mb-3">Organization Name</label>
 										<input
 											type="text"
 											name="name"
 											required
-											className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+											className="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
 											placeholder="Your organization name"
 										/>
 									</div>
                   
 									<div>
-										<label className="block text-sm font-medium text-gray-700 mb-2">City</label>
+										<label className="block text-sm font-semibold text-gray-700 mb-3">City</label>
 										<input
 											type="text"
 											name="city"
 											required
-											className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+											className="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
 											placeholder="Your city"
 										/>
 									</div>
@@ -428,77 +448,77 @@ const VolunteerMatching: React.FC = () => {
 
 								<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 									<div>
-										<label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+										<label className="block text-sm font-semibold text-gray-700 mb-3">Email</label>
 										<input
 											type="email"
 											name="email"
 											required
-											className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+											className="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
 											placeholder="contact@yourorg.com"
 										/>
 									</div>
                   
 									<div>
-										<label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+										<label className="block text-sm font-semibold text-gray-700 mb-3">Phone Number</label>
 										<input
 											type="tel"
 											name="phone"
 											required
-											className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+											className="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
 											placeholder="+1 (555) 123-4567"
 										/>
 									</div>
 								</div>
                 
 								<div>
-									<label className="block text-sm font-medium text-gray-700 mb-2">Cause/Focus Area</label>
+									<label className="block text-sm font-semibold text-gray-700 mb-3">Cause/Focus Area</label>
 									<input
 										type="text"
 										name="cause"
-										className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-										placeholder="education, environment, healthcare, poverty..."
+										className="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
+										placeholder="education, environment, healthcare, poverty alleviation..."
 									/>
 								</div>
                 
 								<div>
-									<label className="block text-sm font-medium text-gray-700 mb-2">What Volunteers Do You Need?</label>
+									<label className="block text-sm font-semibold text-gray-700 mb-3">What Volunteers Do You Need?</label>
 									<textarea
 										name="needs"
-										rows={2}
-										className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-										placeholder="teachers, developers, marketers, event coordinators..."
+										rows={3}
+										className="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
+										placeholder="teachers, developers, marketers, event coordinators, content creators..."
 									/>
 								</div>
                 
 								<div>
-									<label className="block text-sm font-medium text-gray-700 mb-2">Schedule</label>
+									<label className="block text-sm font-semibold text-gray-700 mb-3">Schedule</label>
 									<input
 										type="text"
 										name="schedule"
-										className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-										placeholder="flexible, weekends only, remote work..."
+										className="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
+										placeholder="flexible, weekends only, remote work, evenings..."
 									/>
 								</div>
                 
 								<div>
-									<label className="block text-sm font-medium text-gray-700 mb-2">About Your Organization</label>
+									<label className="block text-sm font-semibold text-gray-700 mb-3">About Your Organization</label>
 									<textarea
 										name="description"
-										rows={3}
-										className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
-										placeholder="Describe your mission and volunteer opportunities..."
+										rows={4}
+										className="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
+										placeholder="Describe your mission, volunteer opportunities, and what makes your organization special..."
 									/>
 								</div>
                 
 								<button
 									type="submit"
 									disabled={loading}
-									className="w-full bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white py-4 rounded-xl font-medium transition-all duration-200 hover:scale-[1.02] hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+									className="w-full bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white py-5 rounded-2xl font-bold text-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-orange-500/30 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
 								>
 									{loading ? (
-										<Loader2 className="w-5 h-5 animate-spin mr-2" />
+										<Loader2 className="w-6 h-6 animate-spin mr-3" />
 									) : (
-										<Sparkles className="w-5 h-5 mr-2" />
+										<Sparkles className="w-6 h-6 mr-3" />
 									)}
 									Find Perfect Volunteers
 								</button>
@@ -508,18 +528,21 @@ const VolunteerMatching: React.FC = () => {
 
 					{/* Semantic Search */}
 					{activeTab === 'semantic' && (
-						<div className="bg-white rounded-3xl p-8 border border-gray-200/50 shadow-xl shadow-gray-200/50">
-							<h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-								Test AI Semantic Understanding
-							</h3>
+						<div className="bg-white/95 backdrop-blur-sm rounded-3xl p-12 border border-gray-200/50 shadow-2xl shadow-gray-200/20">
+							<div className="text-center mb-10">
+								<h3 className="text-3xl font-bold text-gray-900 mb-4">
+									Test AI Semantic Understanding
+								</h3>
+								<p className="text-gray-600 text-lg">Discover how our AI interprets meaning beyond keywords</p>
+							</div>
               
-							<div className="space-y-6">
+							<div className="space-y-8">
 								<div>
-									<label className="block text-sm font-medium text-gray-700 mb-4">
+									<label className="block text-sm font-semibold text-gray-700 mb-6">
 										Try different keywords to see how AI understands meaning:
 									</label>
                   
-									<div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+									<div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
 										{['programming', 'teaching', 'environment', 'healthcare', 'coding', 'mentoring', 'sustainability', 'medical'].map((keyword) => (
 											<button
 												key={keyword}
@@ -527,7 +550,7 @@ const VolunteerMatching: React.FC = () => {
 													setSemanticQuery(keyword);
 													handleSemanticSearch(keyword);
 												}}
-												className="px-4 py-2 bg-orange-50 hover:bg-orange-100 text-orange-700 rounded-lg transition-all duration-200 text-sm font-medium border border-orange-200"
+												className="px-6 py-3 bg-gradient-to-r from-orange-50 to-orange-100 hover:from-orange-100 hover:to-orange-200 text-orange-700 rounded-2xl transition-all duration-300 text-sm font-semibold border border-orange-200 hover:scale-105 shadow-lg shadow-orange-500/10"
 											>
 												{keyword}
 											</button>
@@ -541,18 +564,18 @@ const VolunteerMatching: React.FC = () => {
 										value={semanticQuery}
 										onChange={(e) => setSemanticQuery(e.target.value)}
 										onKeyPress={(e) => e.key === 'Enter' && handleSemanticSearch(semanticQuery)}
-										className="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+										className="flex-1 px-6 py-4 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 text-lg"
 										placeholder="Or type your own keyword..."
 									/>
 									<button
 										onClick={() => handleSemanticSearch(semanticQuery)}
 										disabled={loading || !semanticQuery.trim()}
-										className="px-6 py-3 bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white rounded-xl font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
+										className="px-8 py-4 bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white rounded-2xl font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center hover:scale-105 shadow-lg shadow-orange-500/20"
 									>
 										{loading ? (
-											<Loader2 className="w-5 h-5 animate-spin" />
+											<Loader2 className="w-6 h-6 animate-spin" />
 										) : (
-											<Brain className="w-5 h-5" />
+											<Brain className="w-6 h-6" />
 										)}
 									</button>
 								</div>
@@ -564,40 +587,48 @@ const VolunteerMatching: React.FC = () => {
 
 				{/* Results */}
 				{(results.length > 0 || semanticResults.length > 0) && (
-					<div className="mt-16 max-w-4xl mx-auto">
-						<h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-							{activeTab === 'semantic' ? 'AI Semantic Matches' : 'Your Perfect Matches'}
-						</h3>
+					<div className="mt-20 max-w-5xl mx-auto">
+						<div className="text-center mb-12">
+							<h3 className="text-4xl font-bold text-gray-900 mb-4">
+								{activeTab === 'semantic' ? 'AI Semantic Matches' : 'Your Perfect Matches'}
+							</h3>
+							<p className="text-gray-600 text-lg">
+								{activeTab === 'semantic' 
+									? 'See how our AI understands context and meaning' 
+									: 'These organizations align perfectly with your profile'
+								}
+							</p>
+						</div>
             
-						<div className="grid gap-6">
+						<div className="grid gap-8">
 							{activeTab === 'semantic' ? (
 								semanticResults.map((result, index) => (
-									<div key={index} className="bg-white rounded-2xl p-6 border border-gray-200/50 hover:shadow-lg transition-all duration-200">
-										<div className="flex justify-between items-start mb-4">
-											<h4 className="text-lg font-semibold text-gray-900">{result.name}</h4>
-											<span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">
+									<div key={index} className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 hover:shadow-xl hover:shadow-gray-200/20 transition-all duration-300 hover:scale-[1.01]">
+										<div className="flex justify-between items-start mb-6">
+											<h4 className="text-2xl font-bold text-gray-900">{result.name}</h4>
+											<span className="px-4 py-2 bg-gradient-to-r from-orange-100 to-orange-200 text-orange-700 rounded-full text-sm font-bold">
 												{result.score}
 											</span>
 										</div>
-										<p className="text-gray-600 mb-2">
+										<p className="text-gray-600 mb-3 text-lg">
 											<strong>Focus:</strong> {result.cause}
 										</p>
-										<p className="text-sm text-gray-500">
+										<p className="text-gray-500">
 											{result.matchReason}
 										</p>
 									</div>
 								))
 							) : (
 								results.map((result) => (
-									<div key={result._id} className="bg-white rounded-2xl p-6 border border-gray-200/50 hover:shadow-lg transition-all duration-200">
-										<div className="flex justify-between items-start mb-4">
-											<h4 className="text-lg font-semibold text-gray-900">{result.name}</h4>
-											<span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">
+									<div key={result._id} className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 border border-gray-200/50 hover:shadow-xl hover:shadow-gray-200/20 transition-all duration-300 hover:scale-[1.01]">
+										<div className="flex justify-between items-start mb-6">
+											<h4 className="text-2xl font-bold text-gray-900">{result.name}</h4>
+											<span className="px-4 py-2 bg-gradient-to-r from-orange-100 to-orange-200 text-orange-700 rounded-full text-sm font-bold">
 												{Math.round(result.score * 100)}% match
 											</span>
 										</div>
                     
-										<div className="space-y-2 text-gray-600 mb-4">
+										<div className="space-y-3 text-gray-600 mb-6 text-lg">
 											<p><strong>Location:</strong> {result.city}</p>
 											{result.cause && <p><strong>Cause:</strong> {result.cause}</p>}
 											{result.needs && <p><strong>Looking for:</strong> {result.needs.join(', ')}</p>}
@@ -608,10 +639,10 @@ const VolunteerMatching: React.FC = () => {
                     
 										<button 
 											onClick={() => handleConnectNow(result)}
-											className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium transition-colors duration-200"
+											className="inline-flex items-center bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30"
 										>
 											Connect Now
-											<ArrowRight className="w-4 h-4 ml-1" />
+											<ArrowRight className="w-5 h-5 ml-2" />
 										</button>
 									</div>
 								))
@@ -622,48 +653,48 @@ const VolunteerMatching: React.FC = () => {
 
 				{/* Contact Modal */}
 				{showContactModal && selectedContact && (
-					<div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-						<div className="bg-white rounded-2xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto">
-							<div className="flex justify-between items-start mb-6">
-								<h3 className="text-2xl font-bold text-gray-900">Contact Information</h3>
+					<div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+						<div className="bg-white rounded-3xl p-10 max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+							<div className="flex justify-between items-start mb-8">
+								<h3 className="text-3xl font-bold text-gray-900">Contact Information</h3>
 								<button
 									onClick={closeContactModal}
-									className="text-gray-400 hover:text-gray-600 transition-colors"
+									className="text-gray-400 hover:text-gray-600 transition-colors p-2 hover:bg-gray-100 rounded-xl"
 								>
 									<X className="w-6 h-6" />
 								</button>
 							</div>
               
-							<div className="space-y-4">
+							<div className="space-y-6">
 								<div>
-									<h4 className="text-lg font-semibold text-gray-900 mb-2">{selectedContact.name}</h4>
-									<p className="text-gray-600"><strong>Location:</strong> {selectedContact.city}</p>
-									{selectedContact.cause && <p className="text-gray-600"><strong>Cause:</strong> {selectedContact.cause}</p>}
+									<h4 className="text-2xl font-bold text-gray-900 mb-4">{selectedContact.name}</h4>
+									<p className="text-gray-600 text-lg"><strong>Location:</strong> {selectedContact.city}</p>
+									{selectedContact.cause && <p className="text-gray-600 text-lg"><strong>Cause:</strong> {selectedContact.cause}</p>}
 								</div>
                 
-								<div className="border-t pt-4">
-									<h5 className="font-medium text-gray-900 mb-3">Contact Details:</h5>
-									<div className="space-y-3">
+								<div className="border-t pt-6">
+									<h5 className="font-bold text-gray-900 mb-4 text-lg">Contact Details:</h5>
+									<div className="space-y-4">
 										{selectedContact.email && (
-											<div className="flex items-center text-gray-600">
-												<Mail className="w-5 h-5 mr-3 text-orange-500" />
+											<div className="flex items-center text-gray-600 text-lg">
+												<Mail className="w-6 h-6 mr-4 text-orange-500" />
 												<span>{selectedContact.email}</span>
 											</div>
 										)}
 										{selectedContact.phone && (
-											<div className="flex items-center text-gray-600">
-												<Phone className="w-5 h-5 mr-3 text-orange-500" />
+											<div className="flex items-center text-gray-600 text-lg">
+												<Phone className="w-6 h-6 mr-4 text-orange-500" />
 												<span>{selectedContact.phone}</span>
 											</div>
 										)}
 									</div>
 								</div>
                 
-								<div className="flex gap-3 pt-4">
+								<div className="flex gap-4 pt-6">
 									{selectedContact.email && (
 										<a
 											href={`mailto:${selectedContact.email}`}
-											className="flex-1 bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white py-3 px-4 rounded-xl font-medium transition-all duration-200 text-center"
+											className="flex-1 bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white py-4 px-6 rounded-2xl font-semibold transition-all duration-200 text-center hover:scale-105 shadow-lg shadow-orange-500/20"
 										>
 											Send Email
 										</a>
@@ -671,7 +702,7 @@ const VolunteerMatching: React.FC = () => {
 									{selectedContact.phone && (
 										<a
 											href={`tel:${selectedContact.phone}`}
-											className="flex-1 bg-white border-2 border-orange-500 text-orange-600 hover:bg-orange-50 py-3 px-4 rounded-xl font-medium transition-all duration-200 text-center"
+											className="flex-1 bg-white border-2 border-orange-500 text-orange-600 hover:bg-orange-50 py-4 px-6 rounded-2xl font-semibold transition-all duration-200 text-center hover:scale-105"
 										>
 											Call Now
 										</a>

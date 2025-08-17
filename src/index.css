@@ -91,6 +91,25 @@ a {
   100% { transform: translateY(12px); opacity: 0; }
 }
 
+/* Magnetic hover effects */
+@keyframes magnetic-pull {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.05) rotate(1deg); }
+  100% { transform: scale(1.1) rotate(0deg); }
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Glow pulse */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.6); }
+}
+
 /* Hero Text Animations */
 @keyframes slide-up-1 {
   0% { opacity: 0; transform: translateY(100px); }
