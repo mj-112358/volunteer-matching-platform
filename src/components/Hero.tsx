@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
   return (
     <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-6 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
+        <div className="grid lg:grid-cols-2 gap-12 items-center py-20">
           {/* Left Side - Text Content */}
           <div ref={textRef} className="space-y-8 lg:pr-8">
             {/* Main Headline with Stagger Animation */}
@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
           </div>
           
           {/* Body Content */}
-          <div className="space-y-6 animate-fade-in-up-more-delayed">
+          <div className="space-y-4 animate-fade-in-up-more-delayed">
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
               At Mauka, we've seen what happens when students are given the chance to serve. A quiet teenager becomes a mentor for younger children. A science enthusiast runs her first experiment with kids who've never entered a lab. A football player sets up a match in a village field, and for those kids, it's the first time they've played with proper gear.
             </p>
@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
               In just a few months, Mauka has grown into a network of <strong>3,000+ volunteers</strong>, <strong>7,200 hours of service</strong>, and <strong>78 partner NGOs</strong>. But we're not counting hours for the sake of certificates. We're building stories. We're connecting people who would never have met otherwise. And we're proving that the smallest idea in the right hands can ripple outward into real change.
             </p>
             
-            <div className="p-8 bg-gradient-to-r from-orange-50 to-amber-50 rounded-3xl border border-orange-200/50 max-w-3xl mx-auto">
+            <div className="p-6 bg-gradient-to-r from-orange-50 to-amber-50 rounded-3xl border border-orange-200/50 max-w-3xl mx-auto">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Belief:</h3>
               <p className="text-xl text-orange-700 font-semibold">
                 Young people aren't the leaders of tomorrow. They are leaders today.
@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
           </div>
           
           {/* CTA Buttons */}
-          <div className="pt-12 animate-fade-in-up-more-delayed">
+          <div className="pt-6 animate-fade-in-up-more-delayed">
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <a 
                 href="#volunteer-matching"
@@ -113,7 +113,7 @@ const Hero: React.FC = () => {
         </div>
         
         {/* Right Side - Spline Animation */}
-        <div className="relative h-[600px] lg:h-[700px] w-full">
+        <div className="relative h-[500px] lg:h-[600px] w-full">
           <div className="w-full h-full bg-white rounded-lg overflow-hidden">
             <Spline
               scene="https://prod.spline.design/AcYRTcXVvLwcRDdr/scene.splinecode"

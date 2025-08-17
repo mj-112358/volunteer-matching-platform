@@ -10,6 +10,8 @@ import VolunteerMatching from './components/VolunteerMatching';
 import Contact from './components/Contact';
 import Donate from './components/Donate';
 import FAQ from './components/FAQ';
+import Privacy from './components/Privacy';
+import Terms from './components/Terms';
 
 function App() {
   // Simple routing based on hash
@@ -23,6 +25,10 @@ function App() {
         return <Donate />;
       case 'faq':
         return <FAQ />;
+      case 'privacy':
+        return <Privacy />;
+      case 'terms':
+        return <Terms />;
       default:
         return (
           <>

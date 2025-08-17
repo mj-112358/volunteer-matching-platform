@@ -32,13 +32,6 @@ const Donate: React.FC = () => {
       gradient: 'from-orange-500 to-red-600'
     },
     {
-      icon: Music,
-      title: 'Musical Instrument',
-      description: 'Let a musically inclined child discover their talent with proper instruments.',
-      amount: '₹5,000',
-      gradient: 'from-indigo-500 to-purple-600'
-    },
-    {
       icon: Book,
       title: 'Set of Pencils & Stationery',
       description: 'Basic learning supplies for children who dream of education.',

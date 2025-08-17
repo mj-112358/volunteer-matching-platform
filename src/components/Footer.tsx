@@ -26,8 +26,8 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li><a href="#faq" onClick={(e) => { e.preventDefault(); window.location.hash = 'faq'; window.location.reload(); }} className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">FAQ</a></li>
               <li><a href="#donate" onClick={(e) => { e.preventDefault(); window.location.hash = 'donate'; window.location.reload(); }} className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Donate</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Privacy</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Terms</a></li>
+              <li><a href="#privacy" onClick={(e) => { e.preventDefault(); window.location.hash = 'privacy'; window.location.reload(); }} className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Privacy</a></li>
+              <li><a href="#terms" onClick={(e) => { e.preventDefault(); window.location.hash = 'terms'; window.location.reload(); }} className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Terms</a></li>
             </ul>
           </div>
         </div>
