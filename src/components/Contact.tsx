@@ -9,52 +9,62 @@ const Contact: React.FC = () => {
       name: 'Aadarsh Tripathy',
       role: 'Head of Mauka',
       email: 'atripathy@jpischool.com',
-      grade: '12F'
+      grade: '12F',
+      photo: '/images/team/aadarsh-pic.jpeg'
     },
     {
       name: 'Arsh Choudhary',
       role: 'Head of Mauka',
-      email: 'arshchoudhary009@gmail.com'
+      email: 'arshchoudhary009@gmail.com',
+      photo: '/images/team/arsh pic .jpeg'
     },
     {
       name: 'Siddharth Sharma',
       role: 'Head of Operations',
-      email: 'ssharma28@jpischool.com'
+      email: 'ssharma28@jpischool.com',
+      photo: '/images/team/siddharth pic.jpeg'
     },
     {
       name: 'Yashvi Singh',
       role: 'Head of Operations',
-      email: 'ysingh4@jpischool.com'
+      email: 'ysingh4@jpischool.com',
+      photo: '/images/team/yashvi pic .jpeg'
     },
     {
       name: 'Mrityunjay Gupta',
       role: 'Head of Technology',
-      email: 'mgupta1@jpischool.com'
+      email: 'mgupta1@jpischool.com',
+      photo: '/images/team/mj pic.jpeg'
     },
     {
       name: 'Veer Gupta',
       role: 'Head of Technology',
-      email: 'vgupta15@jpischool.com'
+      email: 'vgupta15@jpischool.com',
+      photo: '/images/team/veer-pic.jpeg'
     },
     {
       name: 'Aarush Gupta',
       role: 'Head of Finance',
-      email: 'agupta41@jpischool.com'
+      email: 'agupta41@jpischool.com',
+      photo: '/images/team/aarush-pic.jpeg'
     },
     {
       name: 'Vivaan Patni',
       role: 'Head of Outreach',
-      email: 'vpatni@jpischool.com'
+      email: 'vpatni@jpischool.com',
+      photo: '/images/team/vivaan-pic.jpeg'
     },
     {
       name: 'Deeva Choudhary',
       role: 'Head of Outreach',
-      email: 'dchoudhary2@jpischool.com'
+      email: 'dchoudhary2@jpischool.com',
+      photo: '/images/team/deeva-pic.jpeg'
     },
     {
       name: 'Aahvana Kapuria',
       role: 'Head of Outreach',
-      email: 'akapuria@jpischool.com'
+      email: 'akapuria@jpischool.com',
+      photo: '/images/team/aahvana-pic.jpeg'
     }
   ];
 
@@ -93,8 +103,18 @@ const Contact: React.FC = () => {
                 </div>
                 
                 <div className="text-center space-y-4">
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">
-                    {member.name}
+                  <div className="w-20 h-20 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    {member.photo ? (
+                      <img 
+                        src={member.photo} 
+                        alt={member.name}
+                        className="w-full h-full object-cover rounded-full border-4 border-orange-200 group-hover:border-orange-300 transition-colors duration-300"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
+                        <User className="w-8 h-8 text-white" />
+                      </div>
+                    )}
                   </h3>
                   
                   <div className="flex items-center justify-center text-orange-600 mb-3">
