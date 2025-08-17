@@ -100,6 +100,7 @@ const Contact: React.FC = () => {
               <div key={index} className="group p-8 rounded-3xl bg-white/80 backdrop-blur-sm border border-orange-100/50 hover:border-orange-200 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:scale-105 transform">
                 <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
                   <User className="w-8 h-8 text-white" />
+                </div>
               <div key={index} className="group p-10 rounded-3xl bg-white/95 backdrop-blur-sm border border-orange-100/50 hover:border-orange-200 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:scale-105 transform">
                 <div className="text-center space-y-6">
                   <div className="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden border-4 border-orange-200 group-hover:border-orange-300 transition-all duration-300 shadow-lg shadow-orange-500/10 group-hover:scale-110">
@@ -129,6 +130,7 @@ const Contact: React.FC = () => {
                     {member.email}
                   </a>
                 </div>
+              </div>
               </div>
             ))}
           </div>
