@@ -58,6 +58,14 @@ const About: React.FC = () => {
                 <p>
                   But numbers are only half the story. The real impact lies in the classroom where a child learns to read because a Mauka volunteer sat with her every evening. It lies in the confidence of a volunteer who realised their voice could actually make someone's day better. It lies in the conversations — messy, imperfect, but deeply human — that happen when students and communities come together.
                 </p>
+                
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  At Mauka, we've seen what happens when students are given the chance to serve. A quiet teenager becomes a mentor for younger children. A science enthusiast runs her first experiment with kids who've never entered a lab. A football player sets up a match in a village field, and for those kids, it's the first time they've played with proper gear.
+                </p>
+                
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  In just a few months, Mauka has grown into a network of <strong>3,000+ volunteers</strong>, <strong>7,200 hours of service</strong>, and <strong>78 partner NGOs</strong>. But we're not counting hours for the sake of certificates. We're building stories. We're connecting people who would never have met otherwise. And we're proving that the smallest idea in the right hands can ripple outward into real change.
+                </p>
               </div>
             </div>
 

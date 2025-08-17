@@ -29,51 +29,40 @@ const Hero: React.FC = () => {
           {/* Left Side - Text Content */}
           <div ref={textRef} className="space-y-8 lg:pr-8">
             {/* Main Headline with Stagger Animation */}
-            <div className="space-y-4">
-            <div className="text-center mb-8">
+            <div className="space-y-6">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-[0.85] tracking-tighter drop-shadow-lg">
                 <span className="inline-block bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent animate-slide-up-1 hover:scale-105 transition-transform duration-500 cursor-default drop-shadow-lg">
                   Mauka
                 </span>
               </h1>
-              <h2 className="text-2xl md:text-3xl text-gray-900 font-bold mt-6 animate-slide-up-2">
+              <h2 className="text-2xl md:text-3xl text-gray-900 font-bold animate-slide-up-2">
                 One Mauka Can Change a Life
               </h2>
-            </div>
-          </div>
           
-          {/* Sub-headline */}
-          <div className="space-y-6 animate-fade-in-up-delayed">
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-semibold max-w-4xl mx-auto">
-              Mauka is more than a volunteering platform. It's a movement of young people who believe that service is not just something you do on weekends — it's something that shapes who you are.
-            </p>
-          </div>
-          
-          {/* Body Content */}
-          <div className="space-y-4 animate-fade-in-up-more-delayed">
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
-              At Mauka, we've seen what happens when students are given the chance to serve. A quiet teenager becomes a mentor for younger children. A science enthusiast runs her first experiment with kids who've never entered a lab. A football player sets up a match in a village field, and for those kids, it's the first time they've played with proper gear.
-            </p>
-            
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
-              <strong className="text-orange-600">That is the power of a mauka — a chance.</strong>
-            </p>
-            
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
-              In just a few months, Mauka has grown into a network of <strong>3,000+ volunteers</strong>, <strong>7,200 hours of service</strong>, and <strong>78 partner NGOs</strong>. But we're not counting hours for the sake of certificates. We're building stories. We're connecting people who would never have met otherwise. And we're proving that the smallest idea in the right hands can ripple outward into real change.
-            </p>
-            
-            <div className="p-6 bg-gradient-to-r from-orange-50 to-amber-50 rounded-3xl border border-orange-200/50 max-w-3xl mx-auto">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Belief:</h3>
-              <p className="text-xl text-orange-700 font-semibold">
-                Young people aren't the leaders of tomorrow. They are leaders today.
+              {/* Sub-headline */}
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-semibold animate-fade-in-up-delayed">
+                Mauka is more than a volunteering platform. It's a movement of young people who believe that service is not just something you do on weekends — it's something that shapes who you are.
               </p>
+              
+              {/* Body Content */}
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed animate-fade-in-up-more-delayed">
+                At Mauka, we've seen what happens when students are given the chance to serve. A quiet teenager becomes a mentor for younger children. A science enthusiast runs her first experiment with kids who've never entered a lab. A football player sets up a match in a village field, and for those kids, it's the first time they've played with proper gear.
+              </p>
+              
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed animate-fade-in-up-more-delayed">
+                <strong className="text-orange-600">That is the power of a mauka — a chance.</strong>
+              </p>
+              
+              <div className="p-4 bg-gradient-to-r from-orange-50 to-amber-50 rounded-2xl border border-orange-200/50 animate-fade-in-up-more-delayed">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Our Belief:</h3>
+                <p className="text-lg text-orange-700 font-semibold">
+                  Young people aren't the leaders of tomorrow. They are leaders today.
+                </p>
+              </div>
             </div>
-          </div>
           
-          {/* CTA Buttons */}
-          <div className="pt-6 animate-fade-in-up-more-delayed">
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up-more-delayed">
               <a 
                 href="#volunteer-matching"
                 className="group relative bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/50 transform magnetic-button"
@@ -109,8 +98,6 @@ const Hero: React.FC = () => {
                 </span>
               </a>
             </div>
-          </div>
-        </div>
         
         {/* Right Side - Spline Animation */}
         <div className="relative h-[500px] lg:h-[600px] w-full">

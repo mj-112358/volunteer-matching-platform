@@ -30,6 +30,9 @@ const Navigation: React.FC = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
+            <a href="#home" className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
+              Home
+            </a>
             <a href="#about" className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
               About
             </a>
@@ -38,6 +41,9 @@ const Navigation: React.FC = () => {
             </a>
             <a href="#impact" className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
               Impact
+            </a>
+            <a href="#leaderboard" className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
+              Leaderboard
             </a>
             <a href="#volunteer-matching" className="text-sm font-medium text-violet-700 hover:text-violet-900 transition-all duration-300 hover:scale-105">
               AI Matching

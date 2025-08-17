@@ -12,6 +12,7 @@ import Donate from './components/Donate';
 import FAQ from './components/FAQ';
 import Privacy from './components/Privacy';
 import Terms from './components/Terms';
+import Leaderboard from './components/Leaderboard';
 
 function App() {
   // Simple routing based on hash
@@ -29,6 +30,8 @@ function App() {
         return <Privacy />;
       case 'terms':
         return <Terms />;
+      case 'leaderboard':
+        return <Leaderboard />;
       default:
         return (
           <>
