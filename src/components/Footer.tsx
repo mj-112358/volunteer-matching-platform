@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-6 group">
-              <div className="w-16 h-16 mr-4 overflow-hidden rounded-full transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg shadow-orange-500/20">
+              <div className="w-20 h-20 mr-4 overflow-hidden rounded-full transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg shadow-orange-500/20">
                 <img 
                   src="/op-image.jpg" 
                   alt="Mauka Logo" 
@@ -22,22 +22,6 @@ const Footer: React.FC = () => {
               Empowering youth to reach their full potential through education, 
               mentorship, and community support.
             </p>
-          </div>
-          
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-bold text-gray-900 mb-6">Navigation</h4>
-            <ul className="space-y-4">
-              <li><a href="#about" className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">About</a></li>
-              <li><a href="#programs" className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Programs</a></li>
-              <li><a href="#impact" className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Impact</a></li>
-              <li><a href="#get-involved" className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Get Involved</a></li>
-              <li><a href="#contact" onClick={(e) => { e.preventDefault(); window.location.hash = 'contact'; window.location.reload(); }} className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Contact</a></li>
-            </ul>
-          </div>
-          
-          {/* Support */}
-          <div>
             <h4 className="text-lg font-bold text-gray-900 mb-6">Support</h4>
             <ul className="space-y-4">
               <li><a href="#faq" onClick={(e) => { e.preventDefault(); window.location.hash = 'faq'; window.location.reload(); }} className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">FAQ</a></li>

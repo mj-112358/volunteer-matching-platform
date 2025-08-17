@@ -20,7 +20,7 @@ const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center group">
-            <div className="w-16 h-16 mr-3 overflow-hidden rounded-full transform group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/20">
+            <div className="w-20 h-20 mr-3 overflow-hidden rounded-full transform group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/20">
               <img 
                 src="/op-image.jpg" 
                 alt="Mauka Logo" 

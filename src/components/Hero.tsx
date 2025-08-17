@@ -31,27 +31,22 @@ const Hero: React.FC = () => {
             {/* Main Headline with Stagger Animation */}
             <div className="space-y-4">
             <div className="text-center mb-8">
-              <div className="text-4xl mb-4">✨</div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-[0.85] tracking-tighter drop-shadow-lg">
-                <span className="inline-block animate-slide-up-1 drop-shadow-lg">One</span>{' '}
-                <span className="inline-block bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent animate-slide-up-2 hover:scale-105 transition-transform duration-500 cursor-default drop-shadow-lg">
+                <span className="inline-block bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent animate-slide-up-1 hover:scale-105 transition-transform duration-500 cursor-default drop-shadow-lg">
                   Mauka
-                </span>{' '}
-                <span className="inline-block animate-slide-up-3 drop-shadow-lg">Can</span>
-                <br />
-                <span className="inline-block animate-slide-up-4 drop-shadow-lg">Change</span>{' '}
-                <span className="inline-block animate-slide-up-5 drop-shadow-lg">a</span>{' '}
-                <span className="inline-block animate-slide-up-1 drop-shadow-lg">Life</span>
+                </span>
               </h1>
-              <div className="text-4xl mt-4">✨</div>
+              <h2 className="text-2xl md:text-3xl text-orange-600 font-bold mt-6 animate-slide-up-2">
+                One Mauka Can Change a Life
+              </h2>
             </div>
           </div>
           
           {/* Sub-headline */}
           <div className="space-y-6 animate-fade-in-up-delayed">
-            <h2 className="text-2xl md:text-3xl text-gray-800 leading-relaxed font-semibold drop-shadow-sm">
+            <h3 className="text-2xl md:text-3xl text-gray-800 leading-relaxed font-semibold drop-shadow-sm">
               Mauka is more than a volunteering platform. It's a movement of young people who believe that service is not just something you do on weekends — it's something that shapes who you are.
-            </h2>
+            </h3>
           </div>
           
           {/* Body Content */}
