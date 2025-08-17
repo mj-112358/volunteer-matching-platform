@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
       role: 'Head of Mauka',
       email: 'atripathy@jpischool.com',
       grade: '12F',
-      photo: '/images/team/aadarsh-pic.jpeg'
+      photo: '/images/team/aadarsh pic.png'
     },
     {
       name: 'Arsh Choudhary',
@@ -40,31 +40,31 @@ const Contact: React.FC = () => {
       name: 'Veer Gupta',
       role: 'Head of Technology',
       email: 'vgupta15@jpischool.com',
-      photo: '/images/team/veer-pic.jpeg'
+      photo: '/images/team/veer pic .jpeg'
     },
     {
       name: 'Aarush Gupta',
       role: 'Head of Finance',
       email: 'agupta41@jpischool.com',
-      photo: '/images/team/aarush-pic.jpeg'
+      photo: '/images/team/aarush pic.jpeg'
     },
     {
       name: 'Vivaan Patni',
       role: 'Head of Outreach',
       email: 'vpatni@jpischool.com',
-      photo: '/images/team/vivaan-pic.jpeg'
+      photo: '/images/team/vivaan pic .jpeg'
     },
     {
       name: 'Deeva Choudhary',
       role: 'Head of Outreach',
       email: 'dchoudhary2@jpischool.com',
-      photo: '/images/team/deeva-pic.jpeg'
+      photo: '/images/team/aahvana pic .jpeg'
     },
     {
       name: 'Aahvana Kapuria',
       role: 'Head of Outreach',
       email: 'akapuria@jpischool.com',
-      photo: '/images/team/aahvana-pic.jpeg'
+      photo: '/images/team/aahvana pic .jpeg'
     }
   ];
 
