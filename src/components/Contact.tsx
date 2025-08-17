@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
       name: 'Veer Gupta',
       role: 'Head of Technology',
       email: 'vgupta15@jpischool.com',
-      photo: '/images/team/veer-pic-new.jpeg'
+      photo: '/images/team/veer-pic.jpeg'
     },
     {
       name: 'Aarush Gupta',
