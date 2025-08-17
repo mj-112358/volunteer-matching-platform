@@ -39,7 +39,6 @@ function App() {
             <About />
             <Programs />
             <Leaderboard />
-            <Leaderboard />
             <Impact />
             <GetInvolved />
             <VolunteerMatching />
