@@ -34,9 +34,9 @@ const About: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative">
-        <div className="grid lg:grid-cols-12 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content - Story */}
-          <div className="lg:col-span-7 space-y-12">
+          <div className="space-y-12">
             <div className="space-y-10">
               <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-100/80 to-amber-100/60 backdrop-blur-sm border border-orange-200/50 text-orange-700 text-sm font-semibold shadow-lg shadow-orange-500/10">
                 <Zap className="w-4 h-4 mr-2" />
@@ -148,7 +148,7 @@ const About: React.FC = () => {
           </div>
           
           {/* Right Content - Values Cards */}
-          <div ref={cardsRef} className="lg:col-span-5">
+          <div ref={cardsRef} className="space-y-6">
             <div className="space-y-6">
               <div className="group p-8 rounded-3xl bg-white/90 backdrop-blur-sm border border-orange-100/50 hover:border-orange-200 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/10 transform opacity-0 translate-x-20 animate-card-1">
                 <div className="flex items-center space-x-6">
@@ -187,7 +187,7 @@ const About: React.FC = () => {
               </div>
 
               {/* Call to Action */}
-              <div className="group p-8 rounded-3xl bg-gradient-to-br from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/30 transform opacity-0 translate-x-20 animate-card-3 cursor-pointer">
+              <div className="group p-8 rounded-3xl bg-gradient-to-br from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/30 transform opacity-0 translate-x-20 animate-card-3 cursor-pointer" style={{ animationDelay: '0.6s' }}>
                 <div className="text-center space-y-4">
                   <h3 className="text-2xl font-bold">Ready to Lead?</h3>
                   <p className="text-orange-100">Join thousands of students creating change across India</p>

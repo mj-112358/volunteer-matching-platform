@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
             {/* Engaging Content */}
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
               <div className="text-xl font-bold text-gray-900 leading-relaxed">
-                Mauka isn't just a platform. It's a revolution of young hearts who refuse to wait for tomorrow to change the world.
+                Mauka isn't just a platform. It's a revolution of young hearts who refuse to wait for tomorrow.
               </div>
             </div>
           
