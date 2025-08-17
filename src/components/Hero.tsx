@@ -112,6 +112,7 @@ const Hero: React.FC = () => {
             />
           </div>
         </div>
+        </div>
       </div>
     </div>
 
@@ -126,15 +127,3 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-[0.85] tracking-tighter drop-shadow-lg">
-              <span className="inline-block animate-slide-up-1 drop-shadow-lg">Everyone</span>{' '}
-              <span className="inline-block animate-slide-up-2 drop-shadow-lg">deserves</span>{' '}
-              <span className="inline-block animate-slide-up-3 drop-shadow-lg">a</span>
-                <br />
-                <span className="inline-block bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 bg-clip-text text-transparent animate-slide-up-4 hover:scale-105 transition-transform duration-500 cursor-default drop-shadow-lg">
-                  Mauka
-                </span>
-                <span className="inline-block animate-slide-up-5 text-orange-600 drop-shadow-lg">.</span>
-              </h1>
-  )
-}
