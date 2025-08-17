@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
                   Mauka
                 </span>
               </h1>
-              <h2 className="text-2xl md:text-3xl text-orange-600 font-bold mt-6 animate-slide-up-2">
+              <h2 className="text-2xl md:text-3xl text-gray-900 font-bold mt-6 animate-slide-up-2">
                 One Mauka Can Change a Life
               </h2>
             </div>
@@ -44,9 +44,9 @@ const Hero: React.FC = () => {
           
           {/* Sub-headline */}
           <div className="space-y-6 animate-fade-in-up-delayed">
-            <h3 className="text-2xl md:text-3xl text-gray-800 leading-relaxed font-semibold drop-shadow-sm">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-semibold max-w-4xl mx-auto">
               Mauka is more than a volunteering platform. It's a movement of young people who believe that service is not just something you do on weekends — it's something that shapes who you are.
-            </h3>
+            </p>
           </div>
           
           {/* Body Content */}
