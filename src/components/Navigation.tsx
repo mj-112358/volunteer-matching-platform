@@ -74,7 +74,7 @@ const Navigation: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center group cursor-pointer" onClick={scrollToTop}>
             <div 
-              className="w-12 h-12 mr-3 overflow-hidden rounded-full transform group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/20"
+              className="w-16 h-16 mr-4 overflow-hidden rounded-full transform group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/20"
               onClick={() => navigateToPage('')}
             >
               <img 
@@ -84,7 +84,7 @@ const Navigation: React.FC = () => {
               />
             </div>
             <span 
-              className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300"
+              className="text-2xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300"
               onClick={() => navigateToPage('')}
             >
               Mauka

@@ -154,8 +154,8 @@ const Leaderboard: React.FC = () => {
           
           <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 tracking-tight">
             Champions of
-            <span className="block bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
-              Change
+            <span className="block bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent leading-[1.1]">
+              Impact
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
