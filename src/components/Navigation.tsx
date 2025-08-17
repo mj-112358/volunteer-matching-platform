@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const Navigation: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -11,75 +13,131 @@ const Navigation: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80; // Account for fixed header
+      const elementPosition = element.offsetTop - offset;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+    setMobileMenuOpen(false);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setMobileMenuOpen(false);
+  };
+
+  const navigateToPage = (page: string) => {
+    window.location.hash = page;
+    window.location.reload();
+    setMobileMenuOpen(false);
+  };
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       scrolled 
-        ? 'bg-white/90 backdrop-blur-xl border-b border-orange-100/50 shadow-lg shadow-orange-500/5' 
+        ? 'bg-white/95 backdrop-blur-xl border-b border-orange-100/50 shadow-lg shadow-orange-500/5' 
         : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center group">
-            <div className="w-20 h-20 mr-3 overflow-hidden rounded-full transform group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/20">
+        <div className="flex items-center justify-between h-20">
+          <div className="flex items-center group cursor-pointer" onClick={scrollToTop}>
+            <div className="w-12 h-12 mr-3 overflow-hidden rounded-full transform group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/20">
               <img 
                 src="/op-image.jpg" 
                 alt="Mauka Logo" 
                 className="w-full h-full object-cover"
               />
             </div>
+            <span className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">
+              Mauka
+            </span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
+            <button 
+              onClick={scrollToTop}
+              className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105"
+            >
               Home
-            </a>
-            <a href="#about" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
+            </button>
+            <button 
+              onClick={() => scrollToSection('about')}
+              className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105"
+            >
               About
-            </a>
-            <a href="#programs" onClick={(e) => { e.preventDefault(); document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
+            </button>
+            <button 
+              onClick={() => scrollToSection('programs')}
+              className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105"
+            >
               Programs
-            </a>
-            <a href="#impact" onClick={(e) => { e.preventDefault(); document.getElementById('impact')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
-              Impact
-            </a>
-            <a href="#leaderboard" onClick={(e) => { e.preventDefault(); document.getElementById('leaderboard')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105">
+            </button>
+            <button 
+              onClick={() => scrollToSection('leaderboard')}
+              className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105"
+            >
               Leaderboard
-            </a>
-            <a href="#volunteer-matching" onClick={(e) => { e.preventDefault(); document.getElementById('volunteer-matching')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-sm font-medium text-violet-700 hover:text-violet-900 transition-all duration-300 hover:scale-105">
+            </button>
+            <button 
+              onClick={() => scrollToSection('impact')}
+              className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105"
+            >
+              Impact
+            </button>
+            <button 
+              onClick={() => scrollToSection('volunteer-matching')}
+              className="text-sm font-medium text-violet-700 hover:text-violet-900 transition-all duration-300 hover:scale-105"
+            >
               AI Matching
-            </a>
-            <a 
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.hash = 'contact';
-                window.location.reload();
-              }}
+            </button>
+            <button 
+              onClick={() => navigateToPage('contact')}
               className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105"
             >
               Contact
-            </a>
-            <a 
-              href="#donate"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.hash = 'donate';
-                window.location.reload();
-              }}
-              className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-medium px-6 py-2.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 transform"
+            </button>
+            <button 
+              onClick={() => navigateToPage('donate')}
+              className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-medium px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 transform"
             >
               <span className="group-hover:scale-105 transition-transform duration-200 inline-block">
                 Donate
               </span>
-            </a>
+            </button>
           </div>
 
-          <button className="md:hidden p-2 hover:bg-orange-50 rounded-lg transition-all duration-200">
-            <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 hover:bg-orange-50 rounded-lg transition-all duration-200"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6 text-gray-700" />
+            ) : (
+              <Menu className="w-6 h-6 text-gray-700" />
+            )}
           </button>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-orange-100/50 shadow-lg">
+            <div className="px-6 py-4 space-y-4">
+              <button onClick={scrollToTop} className="block w-full text-left text-gray-700 hover:text-orange-600 transition-colors duration-200">Home</button>
+              <button onClick={() => scrollToSection('about')} className="block w-full text-left text-gray-700 hover:text-orange-600 transition-colors duration-200">About</button>
+              <button onClick={() => scrollToSection('programs')} className="block w-full text-left text-gray-700 hover:text-orange-600 transition-colors duration-200">Programs</button>
+              <button onClick={() => scrollToSection('leaderboard')} className="block w-full text-left text-gray-700 hover:text-orange-600 transition-colors duration-200">Leaderboard</button>
+              <button onClick={() => scrollToSection('impact')} className="block w-full text-left text-gray-700 hover:text-orange-600 transition-colors duration-200">Impact</button>
+              <button onClick={() => scrollToSection('volunteer-matching')} className="block w-full text-left text-gray-700 hover:text-orange-600 transition-colors duration-200">AI Matching</button>
+              <button onClick={() => navigateToPage('contact')} className="block w-full text-left text-gray-700 hover:text-orange-600 transition-colors duration-200">Contact</button>
+              <button onClick={() => navigateToPage('donate')} className="block w-full text-left bg-gradient-to-r from-orange-500 to-orange-600 text-white py-2 px-4 rounded-lg">Donate</button>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
