@@ -44,9 +44,8 @@ const About: React.FC = () => {
               </div>
               
               <h2 className="text-5xl md:text-6xl font-black text-gray-900 leading-tight tracking-tight">
-                Empowering Youth
-                <span className="block bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent leading-[1.1]">
-                  Through Service
+                <span className="bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+                  Empowering Youth Through Service
                 </span>
               </h2>
               
