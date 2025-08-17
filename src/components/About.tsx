@@ -89,10 +89,6 @@ const About: React.FC = () => {
                   But numbers are just the beginning. The real magic happens when a quiet teenager discovers their voice mentoring younger children. When a science enthusiast runs her first experiment with kids who've never seen a lab.
                 </div>
                 
-                <div className="text-xl font-black bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
-                  That is the power of a mauka — a chance.
-                </div>
-                
                 <div className="text-lg font-bold text-gray-900">
                   Young people aren't the leaders of tomorrow. They are leaders today.
                 </div>
