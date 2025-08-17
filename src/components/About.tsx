@@ -36,147 +36,95 @@ const About: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-20 items-start">
           {/* Left Content - Main Story */}
           <div className="lg:col-span-7 space-y-12 opacity-0 translate-y-20 transition-all duration-1000 delay-200 animate-in-trigger">
-            <div className="space-y-8">
+            <div className="space-y-12">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium">
                 <Zap className="w-4 h-4 mr-2" />
-                Our Journey
+                Our Story
               </div>
               
-              <h2 className="text-5xl md:text-6xl font-black text-gray-900 leading-tight tracking-tight">
-                From Vision to
-                <span className="block bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
-                  National Impact
-                </span>
+              <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight tracking-tight">
+                Our Story
               </h2>
               
-              <div className="space-y-8 text-lg text-gray-600 leading-relaxed">
-                <p className="transform hover:scale-105 transition-transform duration-300 p-6 rounded-2xl hover:bg-white/50 hover:shadow-lg">
-                  Since its inception, <strong className="text-orange-600">digital Mauka</strong> has seen remarkable growth, 
-                  attracting <strong>200-300 volunteers</strong> and reaching over <strong>1,100 individuals</strong> through 
-                  presentations and awareness campaigns. We earned recognition from organizations like the 
-                  <strong className="text-orange-600"> Indian School of Leadership</strong>, led by Stanford graduates.
+              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+                <p>
+                  Mauka began with a simple frustration: too many students wanted to serve, and too many NGOs needed help, but the bridge between them didn't exist. So we built it.
+                </p>
+                
+                <p>
+                  What started as a student-led initiative inside JPIS has now grown far beyond one school. Today, Mauka stands as one of the largest student-driven volunteering networks in India, connecting thousands of volunteers to NGOs working in education, healthcare, sustainability, arts, and more.
+                </p>
+                
+                <p>
+                  But numbers are only half the story. The real impact lies in the classroom where a child learns to read because a Mauka volunteer sat with her every evening. It lies in the confidence of a volunteer who realised their voice could actually make someone's day better. It lies in the conversations — messy, imperfect, but deeply human — that happen when students and communities come together.
                 </p>
               </div>
             </div>
 
-            {/* How It Started Section */}
+            {/* Mission Section */}
             <div className="space-y-6">
-              <h3 className="text-3xl font-bold text-gray-900 flex items-center">
-                <Star className="w-8 h-8 text-orange-500 mr-3" />
-                How It Started
+              <h3 className="text-2xl font-bold text-gray-900 flex items-center">
+                <Target className="w-6 h-6 text-orange-500 mr-3" />
+                Our Mission
               </h3>
               
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-orange-100/50 hover:shadow-xl hover:scale-105 transition-all duration-300">
-                  <div className="text-2xl font-bold text-orange-600 mb-2">$150</div>
-                  <p className="text-gray-700">Zoom operations for weekly meetings with our 18-member team across various regions</p>
-                </div>
-                
-                <div className="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-orange-100/50 hover:shadow-xl hover:scale-105 transition-all duration-300">
-                  <div className="text-2xl font-bold text-orange-600 mb-2">$360</div>
-                  <p className="text-gray-700">Digital marketing campaigns on Google and Meta to expand our NGO and volunteer network</p>
-                </div>
-                
-                <div className="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-orange-100/50 hover:shadow-xl hover:scale-105 transition-all duration-300">
-                  <div className="text-2xl font-bold text-orange-600 mb-2">$300</div>
-                  <p className="text-gray-700">Website and app enhancements for improved functionality, security, and user experience</p>
-                </div>
-                
-                <div className="p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-orange-100/50 hover:shadow-xl hover:scale-105 transition-all duration-300">
-                  <div className="text-2xl font-bold text-orange-600 mb-2">$690</div>
-                  <p className="text-gray-700">Expansion into Odisha, Chhattisgarh, Punjab, and Kashmir, building nationwide partnerships</p>
-                </div>
-              </div>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                To create a culture where every young person sees service not as an obligation, but as an opportunity — an opportunity to grow, to lead, and to transform someone else's life while transforming their own.
+              </p>
             </div>
 
-            {/* Recognition Section */}
+            {/* Vision Section */}
             <div className="space-y-6">
-              <h3 className="text-3xl font-bold text-gray-900 flex items-center">
-                <Award className="w-8 h-8 text-orange-500 mr-3" />
-                Recognition & Awards
+              <h3 className="text-2xl font-bold text-gray-900 flex items-center">
+                <Star className="w-6 h-6 text-orange-500 mr-3" />
+                Our Vision
               </h3>
               
-              <div className="space-y-4">
-                <div className="p-6 bg-gradient-to-r from-orange-50 to-orange-100/50 rounded-2xl border border-orange-200/50 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Award className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900 mb-2">iVolunteer Youth Champion (Finalist)</h4>
-                      <p className="text-gray-700">Founder Parth Jain was the youngest awardee at the IRA ceremony in Mumbai, recognized after a multi-round process including 30,000 poll votes.</p>
-                    </div>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                We imagine a future where service is as common as schooling — where every student graduates not only with grades, but with stories of lives they've touched. A future where every NGO, no matter how small, has access to the energy, ideas, and commitment of youth volunteers.
+              </p>
+            </div>
+            
+            {/* Values Section */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-gray-900 flex items-center">
+                <Heart className="w-6 h-6 text-orange-500 mr-3" />
+                Our Values
+              </h3>
+              
+              <ul className="space-y-4 text-lg text-gray-600">
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-orange-500 rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                  <div>
+                    <strong className="text-gray-900">Youth-driven:</strong> We don't wait for adults to give us permission. We lead now.
                   </div>
-                </div>
-                
-                <div className="p-6 bg-gradient-to-r from-orange-50 to-orange-100/50 rounded-2xl border border-orange-200/50 hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Star className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900 mb-2">Pramerica Life Insurance Silver Medallion</h4>
-                      <p className="text-gray-700">Selected as 1 of 25 out of 2,200+ social service projects across India. Parth Jain was the only Rajasthani awardee.</p>
-                    </div>
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-orange-500 rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                  <div>
+                    <strong className="text-gray-900">Equity:</strong> Every NGO, every child, every volunteer matters.
                   </div>
-                </div>
-                
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="p-4 bg-white/80 rounded-xl border border-orange-100/50 text-center hover:shadow-lg transition-all duration-300">
-                    <div className="text-orange-600 font-bold">City Bhaskar</div>
-                    <div className="text-sm text-gray-600">Newspaper Recognition</div>
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-orange-500 rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                  <div>
+                    <strong className="text-gray-900">Sustainability:</strong> Service should build something that lasts — not just tick a box.
                   </div>
-                  <div className="p-4 bg-white/80 rounded-xl border border-orange-100/50 text-center hover:shadow-lg transition-all duration-300">
-                    <div className="text-orange-600 font-bold">First India</div>
-                    <div className="text-sm text-gray-600">Featured Article</div>
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-orange-500 rounded-full mt-3 mr-4 flex-shrink-0"></span>
+                  <div>
+                    <strong className="text-gray-900">Collaboration:</strong> Mauka is not about one hero. It's about creating networks of change.
                   </div>
-                  <div className="p-4 bg-white/80 rounded-xl border border-orange-100/50 text-center hover:shadow-lg transition-all duration-300">
-                    <div className="text-orange-600 font-bold">JPIS Winner</div>
-                    <div className="text-sm text-gray-600">Best Initiative 2022-23</div>
-                  </div>
-                </div>
-              </div>
+                </li>
+              </ul>
             </div>
           </div>
           
-          {/* Right Content - Impact Stats & Values */}
+          {/* Right Content - Values Cards */}
           <div ref={cardsRef} className="lg:col-span-5">
             <div className="space-y-8">
-              {/* Growth Stats */}
-              <div className="p-8 rounded-3xl bg-gradient-to-br from-white/90 to-orange-50/80 backdrop-blur-sm border border-orange-100/50 hover:shadow-2xl transition-all duration-500 hover:scale-105 transform opacity-0 translate-x-20 animate-card-1">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <TrendingUp className="w-6 h-6 text-orange-600 mr-3" />
-                  Our Growth
-                </h3>
-                <div className="space-y-6">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-700">NGO Network</span>
-                    <div className="flex items-center space-x-2">
-                      <span className="text-2xl font-bold text-orange-600">45</span>
-                      <span className="text-gray-400">→</span>
-                      <span className="text-3xl font-bold text-orange-600">78</span>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-700">Volunteers</span>
-                    <div className="flex items-center space-x-2">
-                      <span className="text-2xl font-bold text-orange-600">1,100</span>
-                      <span className="text-gray-400">→</span>
-                      <span className="text-3xl font-bold text-orange-600">3,000</span>
-                    </div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-700">Service Hours</span>
-                    <div className="flex items-center space-x-2">
-                      <span className="text-2xl font-bold text-orange-600">3,500</span>
-                      <span className="text-gray-400">→</span>
-                      <span className="text-3xl font-bold text-orange-600">7,200</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Core Values */}
+              {/* Values Cards */}
               <div className="space-y-4">
                 <div className="group p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-orange-100/50 hover:border-orange-200 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/10 transform opacity-0 translate-x-20 animate-card-2">
                   <div className="flex items-center space-x-4">
@@ -184,8 +132,20 @@ const About: React.FC = () => {
                       <Users className="w-6 h-6 text-orange-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">Community First</h3>
-                      <p className="text-gray-600">Building stronger connections</p>
+                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">Youth-Driven</h3>
+                      <p className="text-gray-600">Leading change today, not tomorrow</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="group p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-orange-100/50 hover:border-orange-200 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/10 transform opacity-0 translate-x-20 animate-card-3">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                      <Heart className="w-6 h-6 text-orange-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">Equity Focused</h3>
+                      <p className="text-gray-600">Every voice matters equally</p>
                     </div>
                   </div>
                 </div>
@@ -196,20 +156,8 @@ const About: React.FC = () => {
                       <Target className="w-6 h-6 text-orange-600" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">Impact Driven</h3>
-                      <p className="text-gray-600">Measurable positive change</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="group p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-orange-100/50 hover:border-orange-200 transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/10 transform opacity-0 translate-x-20 animate-card-3">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                      <Globe className="w-6 h-6 text-orange-600" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">Nationwide Reach</h3>
-                      <p className="text-gray-600">Expanding across India</p>
+                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">Sustainable Impact</h3>
+                      <p className="text-gray-600">Building lasting change</p>
                     </div>
                   </div>
                 </div>

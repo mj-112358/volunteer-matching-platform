@@ -99,46 +99,9 @@ const Impact: React.FC = () => {
           <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6 tracking-tight">
             Our Impact
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Measuring success through the lives we've touched and the futures we've transformed
+          <p className="text-3xl font-bold text-orange-600 max-w-3xl mx-auto leading-relaxed">
+            Still under development!
           </p>
-        </div>
-        
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-          {stats.map((stat, index) => (
-            <div key={index} className={`group text-center p-8 rounded-3xl bg-white/80 backdrop-blur-sm border border-orange-100/50 hover:border-orange-200 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:scale-110 transform opacity-0 translate-y-20 ${stat.delay}`}>
-              <div className={`text-4xl md:text-5xl font-black ${stat.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                {displayNumbers[index]}{stat.suffix}
-              </div>
-              <div className="text-lg font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors duration-300">
-                {stat.label}
-              </div>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                {stat.description}
-              </p>
-            </div>
-          ))}
-        </div>
-        
-        {/* Testimonial */}
-        <div className="max-w-5xl mx-auto opacity-0 translate-y-20 transition-all duration-1000 delay-500 animate-in-trigger">
-          <div className="p-12 rounded-3xl bg-gradient-to-br from-white/90 to-orange-50/80 backdrop-blur-sm border border-orange-200/50 text-center shadow-2xl shadow-orange-500/10 hover:scale-105 transition-all duration-500">
-            <blockquote className="text-2xl md:text-3xl text-gray-700 font-light leading-relaxed mb-8 tracking-tight">
-              "Mauka didn't just give me a scholarship—they gave me hope, mentorship, and a community that believed in my potential."
-            </blockquote>
-            <div className="flex items-center justify-center space-x-4">
-              <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg shadow-orange-500/30">
-                <span className="text-white text-lg font-bold">SC</span>
-              </div>
-              <div className="text-left">
-                <cite className="text-lg font-bold text-gray-900 not-italic">
-                  Sarah Chen
-                </cite>
-                <p className="text-orange-600 font-medium">Program Graduate</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

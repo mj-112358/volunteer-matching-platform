@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center mb-6 group">
-              <div className="w-12 h-12 mr-4 overflow-hidden rounded-2xl transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg shadow-orange-500/20">
+              <div className="w-16 h-16 mr-4 overflow-hidden rounded-full transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg shadow-orange-500/20">
                 <img 
                   src="/op-image.jpg" 
                   alt="Mauka Logo" 
@@ -22,22 +22,6 @@ const Footer: React.FC = () => {
               Empowering youth to reach their full potential through education, 
               mentorship, and community support.
             </p>
-            
-            {/* Social Links */}
-            <div className="flex space-x-4">
-              <a href="#" className="group p-3 bg-white hover:bg-orange-50 rounded-2xl border border-orange-100/50 hover:border-orange-200 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/20">
-                <Twitter className="w-5 h-5 text-gray-600 group-hover:text-orange-600 transition-colors duration-300" />
-              </a>
-              <a href="#" className="group p-3 bg-white hover:bg-orange-50 rounded-2xl border border-orange-100/50 hover:border-orange-200 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/20">
-                <Linkedin className="w-5 h-5 text-gray-600 group-hover:text-orange-600 transition-colors duration-300" />
-              </a>
-              <a href="#" className="group p-3 bg-white hover:bg-orange-50 rounded-2xl border border-orange-100/50 hover:border-orange-200 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/20">
-                <Github className="w-5 h-5 text-gray-600 group-hover:text-orange-600 transition-colors duration-300" />
-              </a>
-              <a href="#" className="group p-3 bg-white hover:bg-orange-50 rounded-2xl border border-orange-100/50 hover:border-orange-200 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/20">
-                <Mail className="w-5 h-5 text-gray-600 group-hover:text-orange-600 transition-colors duration-300" />
-              </a>
-            </div>
           </div>
           
           {/* Quick Links */}
@@ -48,6 +32,7 @@ const Footer: React.FC = () => {
               <li><a href="#programs" className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Programs</a></li>
               <li><a href="#impact" className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Impact</a></li>
               <li><a href="#get-involved" className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Get Involved</a></li>
+              <li><a href="#contact" onClick={(e) => { e.preventDefault(); window.location.hash = 'contact'; window.location.reload(); }} className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Contact</a></li>
             </ul>
           </div>
           
@@ -55,8 +40,8 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-bold text-gray-900 mb-6">Support</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Contact</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">FAQ</a></li>
+              <li><a href="#faq" onClick={(e) => { e.preventDefault(); window.location.hash = 'faq'; window.location.reload(); }} className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">FAQ</a></li>
+              <li><a href="#donate" onClick={(e) => { e.preventDefault(); window.location.hash = 'donate'; window.location.reload(); }} className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Donate</a></li>
               <li><a href="#" className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Privacy</a></li>
               <li><a href="#" className="text-gray-600 hover:text-orange-600 transition-all duration-300 hover:translate-x-1 inline-block">Terms</a></li>
             </ul>

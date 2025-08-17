@@ -20,7 +20,7 @@ const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center group">
-            <div className="w-10 h-10 mr-3 overflow-hidden rounded-xl transform group-hover:scale-110 transition-transform duration-300">
+            <div className="w-16 h-16 mr-3 overflow-hidden rounded-full transform group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/20">
               <img 
                 src="/op-image.jpg" 
                 alt="Mauka Logo" 
@@ -42,11 +42,30 @@ const Navigation: React.FC = () => {
             <a href="#volunteer-matching" className="text-sm font-medium text-violet-700 hover:text-violet-900 transition-all duration-300 hover:scale-105">
               AI Matching
             </a>
-            <button className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-medium px-6 py-2.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 transform">
+            <a 
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.hash = 'contact';
+                window.location.reload();
+              }}
+              className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-all duration-300 hover:scale-105"
+            >
+              Contact
+            </a>
+            <a 
+              href="#donate"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.hash = 'donate';
+                window.location.reload();
+              }}
+              className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm font-medium px-6 py-2.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 transform"
+            >
               <span className="group-hover:scale-105 transition-transform duration-200 inline-block">
-                Get Involved
+                Donate
               </span>
-            </button>
+            </a>
           </div>
 
           <button className="md:hidden p-2 hover:bg-orange-50 rounded-lg transition-all duration-200">
