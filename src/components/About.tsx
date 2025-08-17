@@ -126,7 +126,6 @@ const About: React.FC = () => {
             </div>
               </div>
             </div>
-          </div>
           
           {/* Right Content - Values Cards */}
           <div ref={cardsRef} className="space-y-6">
