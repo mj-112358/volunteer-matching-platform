@@ -104,17 +104,11 @@ const Contact: React.FC = () => {
                 
                 <div className="text-center space-y-4">
                   <div className="w-20 h-20 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    {member.photo ? (
-                      <img 
-                        src={member.photo} 
-                        alt={member.name}
-                        className="w-full h-full object-cover rounded-full border-4 border-orange-200 group-hover:border-orange-300 transition-colors duration-300"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
-                        <User className="w-8 h-8 text-white" />
-                      </div>
-                    )}
+                    <img 
+                      src={member.photo} 
+                      alt={member.name}
+                      className="w-full h-full object-cover rounded-full border-4 border-orange-200 group-hover:border-orange-300 transition-colors duration-300"
+                    />
                   </div>
                   
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
