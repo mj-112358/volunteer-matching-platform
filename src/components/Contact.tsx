@@ -103,6 +103,10 @@ const Contact: React.FC = () => {
                 </div>
                 
                 <div className="text-center space-y-4">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden">
+                    <img 
+                      src={member.photo}
+                      alt={member.name}
                       className="w-full h-full object-cover rounded-full border-4 border-orange-200 group-hover:border-orange-300 transition-colors duration-300"
                     />
                   </div>
