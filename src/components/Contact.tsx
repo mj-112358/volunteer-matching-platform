@@ -149,34 +149,6 @@ const Contact: React.FC = () => {
       </section>
       <Footer />
     </div>
-
-        {/* Contact CTA */}
-        <div className="text-center mt-20">
-          <div className="p-12 rounded-3xl bg-gradient-to-br from-white/90 to-orange-50/80 backdrop-blur-sm border border-orange-200/50 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
-              Ready to Make a Difference?
-            </h3>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Whether you're a student looking to volunteer, an NGO seeking support, or someone who wants to contribute to our mission, we'd love to hear from you.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="#volunteer-matching"
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
-              >
-                Start Volunteering
-              </a>
-              <a 
-                href="#volunteer-matching"
-                className="bg-white border-2 border-orange-500 text-orange-600 hover:bg-orange-50 px-8 py-4 rounded-2xl font-semibold transition-all duration-300 hover:scale-105"
-              >
-                Partner with Us
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 };
 
