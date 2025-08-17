@@ -24,7 +24,7 @@ const GetInvolved: React.FC = () => {
   }, []);
 
   return (
-    <section id="get-involved" ref={sectionRef} className="py-32 bg-gradient-to-b from-orange-50 to-orange-25 relative overflow-hidden">
+    <section id="get-involved" ref={sectionRef} className="py-20 bg-gradient-to-b from-orange-50 to-orange-25 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 right-10 w-72 h-72 bg-gradient-to-l from-orange-300/40 to-transparent rounded-full blur-3xl animate-float"></div>
@@ -33,7 +33,7 @@ const GetInvolved: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Header */}
-        <div className="text-center mb-20 opacity-0 translate-y-20 transition-all duration-1000 animate-in-trigger">
+        <div className="text-center mb-16 opacity-0 translate-y-20 transition-all duration-1000 animate-in-trigger">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-orange-200/50 text-orange-700 text-sm font-medium mb-6 shadow-lg shadow-orange-500/10">
             <Zap className="w-4 h-4 mr-2" />
             Join Our Mission

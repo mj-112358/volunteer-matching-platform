@@ -137,7 +137,7 @@ const Leaderboard: React.FC = () => {
   };
 
   return (
-    <section id="leaderboard" className="py-32 bg-gradient-to-b from-orange-25 to-orange-50 relative overflow-hidden">
+    <section id="leaderboard" className="py-20 bg-gradient-to-b from-orange-25 to-orange-50 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-l from-orange-200/30 to-transparent rounded-full blur-3xl animate-float"></div>
@@ -146,7 +146,7 @@ const Leaderboard: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
             <Trophy className="w-4 h-4 mr-2" />
             Top Performers
