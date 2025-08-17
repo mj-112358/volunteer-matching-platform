@@ -34,9 +34,9 @@ const About: React.FC = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-start">
           {/* Left Content - Story */}
-          <div className="space-y-12">
+          <div className="space-y-10">
             <div className="space-y-10">
               <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-100/80 to-amber-100/60 backdrop-blur-sm border border-orange-200/50 text-orange-700 text-sm font-semibold shadow-lg shadow-orange-500/10">
                 <Zap className="w-4 h-4 mr-2" />
@@ -50,15 +50,15 @@ const About: React.FC = () => {
               </h2>
               
               <div className="space-y-8 text-lg text-gray-700 leading-relaxed">
-                <div className="text-3xl font-black text-gray-900 leading-tight">
+                <div className="text-2xl font-black text-gray-900 leading-tight">
                   Mauka didn't start in a boardroom. It started in frustration.
                 </div>
                 
-                <div className="text-xl leading-relaxed font-light">
+                <div className="text-lg leading-relaxed font-light">
                   Picture this: thousands of students burning with the desire to serve, and thousands of NGOs desperately needing help. Yet they existed in parallel universes, never meeting. The bridge didn't exist.
                 </div>
                 
-                <div className="text-lg leading-relaxed">
+                <div className="text-base leading-relaxed">
                   We've witnessed magic happen when students are given the chance to serve:
                 </div>
                 
@@ -77,52 +77,56 @@ const About: React.FC = () => {
                   </div>
                 </div>
                 
-                <div className="text-2xl font-black bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+                <div className="text-xl font-black bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
                   That is the power of a mauka — a chance.
                 </div>
                 
-                <div className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+                <div className="text-xl font-bold bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
                   So we became the bridge.
                 </div>
                 
-                <div className="p-8 bg-gradient-to-r from-orange-50/80 to-amber-50/60 rounded-3xl border border-orange-200/30 backdrop-blur-sm shadow-lg shadow-orange-500/5">
-                  <div className="text-xl font-bold text-orange-800 mb-6">In just a few months, we've achieved the impossible:</div>
-                  <div className="grid grid-cols-3 gap-6 text-center">
-                    <div className="p-4 bg-white/70 rounded-2xl border border-orange-100/50">
-                      <div className="text-3xl font-black text-orange-600">3,000+</div>
-                      <div className="text-sm text-gray-700 font-semibold">Volunteers</div>
-                    </div>
-                    <div className="p-4 bg-white/70 rounded-2xl border border-orange-100/50">
-                      <div className="text-3xl font-black text-orange-600">7,200</div>
-                      <div className="text-sm text-gray-700 font-semibold">Service Hours</div>
-                    </div>
-                    <div className="p-4 bg-white/70 rounded-2xl border border-orange-100/50">
-                      <div className="text-3xl font-black text-orange-600">78</div>
-                      <div className="text-sm text-gray-700 font-semibold">Partner NGOs</div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="text-xl leading-relaxed font-light">
+                <div className="text-lg leading-relaxed font-light">
                   But numbers are just the beginning. The real magic happens when a quiet teenager discovers their voice mentoring younger children. When a science enthusiast runs her first experiment with kids who've never seen a lab.
                 </div>
                 
-                <div className="text-3xl font-black bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
+                <div className="text-xl font-black bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
                   That is the power of a mauka — a chance.
                 </div>
                 
-                <div className="text-2xl font-bold text-gray-900">
+                <div className="text-lg font-bold text-gray-900">
                   Young people aren't the leaders of tomorrow. They are leaders today.
                 </div>
                 
-                <div className="text-xl leading-relaxed font-light">
+                <div className="text-base leading-relaxed font-light">
                   We're not counting hours for certificates. We're building stories. We're connecting souls who would never have met otherwise. We're proving that the smallest idea in the right hands can ripple outward into unstoppable change.
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Right Content - Stats and Mission/Vision */}
+          <div className="space-y-10">
+            {/* Achievement Stats */}
+            <div className="p-8 bg-gradient-to-r from-orange-50/80 to-amber-50/60 rounded-3xl border border-orange-200/30 backdrop-blur-sm shadow-lg shadow-orange-500/5">
+              <div className="text-xl font-bold text-orange-800 mb-6">In just a few months, we've achieved the impossible:</div>
+              <div className="grid grid-cols-1 gap-6 text-center">
+                <div className="p-6 bg-white/70 rounded-2xl border border-orange-100/50">
+                  <div className="text-4xl font-black text-orange-600">3,000+</div>
+                  <div className="text-base text-gray-700 font-semibold">Active Volunteers</div>
+                </div>
+                <div className="p-6 bg-white/70 rounded-2xl border border-orange-100/50">
+                  <div className="text-4xl font-black text-orange-600">7,200</div>
+                  <div className="text-base text-gray-700 font-semibold">Service Hours</div>
+                </div>
+                <div className="p-6 bg-white/70 rounded-2xl border border-orange-100/50">
+                  <div className="text-4xl font-black text-orange-600">78</div>
+                  <div className="text-base text-gray-700 font-semibold">Partner NGOs</div>
                 </div>
               </div>
             </div>
 
             {/* Mission & Vision */}
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-8">
               <div className="space-y-6 p-8 bg-gradient-to-br from-white/90 to-orange-50/60 rounded-3xl border border-orange-200/30 backdrop-blur-sm shadow-lg shadow-orange-500/5">
                 <h3 className="text-2xl font-bold text-gray-900 flex items-center">
                   <Target className="w-7 h-7 text-orange-500 mr-3" />
