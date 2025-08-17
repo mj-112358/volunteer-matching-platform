@@ -62,12 +62,15 @@ const GetInvolved: React.FC = () => {
               Share your skills, time, and passion to mentor young people and help them discover their potential.
             </p>
             
-            <button className="group/btn w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-2xl text-lg font-bold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/30 transform">
+            <a 
+              href="#volunteer-matching"
+              className="group/btn w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-2xl text-lg font-bold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/30 transform inline-flex items-center justify-center"
+            >
               <span className="flex items-center justify-center">
                 Start Volunteering
                 <ArrowRight className="ml-3 w-5 h-5 transform group-hover/btn:translate-x-2 group-hover/btn:scale-110 transition-all duration-300" />
               </span>
-            </button>
+            </a>
           </div>
           
           <div className="group p-10 rounded-3xl bg-gradient-to-br from-white/90 to-orange-50/80 backdrop-blur-sm border border-orange-200/50 hover:border-orange-300 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 hover:scale-105 text-center transform opacity-0 translate-y-20 animate-donate-card">
@@ -83,12 +86,16 @@ const GetInvolved: React.FC = () => {
               Your contribution directly funds scholarships, programs, and resources that transform lives.
             </p>
             
-            <button className="group/btn w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white px-8 py-4 rounded-2xl text-lg font-bold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/30 transform">
+            <a 
+              href="#donate"
+              onClick={(e) => { e.preventDefault(); window.location.hash = 'donate'; window.location.reload(); }}
+              className="group/btn w-full bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white px-8 py-4 rounded-2xl text-lg font-bold transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-orange-500/30 transform inline-flex items-center justify-center"
+            >
               <span className="flex items-center justify-center">
                 Make a Donation
                 <ArrowRight className="ml-3 w-5 h-5 transform group-hover/btn:translate-x-2 group-hover/btn:scale-110 transition-all duration-300" />
               </span>
-            </button>
+            </a>
           </div>
         </div>
         
@@ -97,10 +104,14 @@ const GetInvolved: React.FC = () => {
           <p className="text-gray-600 mb-8 text-xl">
             Have questions or want to learn more about our work?
           </p>
-          <button className="group inline-flex items-center text-orange-600 hover:text-orange-700 font-bold text-xl transition-all duration-300 hover:scale-105">
+          <a 
+            href="#contact"
+            onClick={(e) => { e.preventDefault(); window.location.hash = 'contact'; window.location.reload(); }}
+            className="group inline-flex items-center text-orange-600 hover:text-orange-700 font-bold text-xl transition-all duration-300 hover:scale-105"
+          >
             Contact Us
             <ArrowRight className="ml-3 w-6 h-6 transform group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300" />
-          </button>
+          </a>
         </div>
       </div>
     </section>
