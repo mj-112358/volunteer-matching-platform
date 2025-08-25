@@ -2,7 +2,7 @@
   "name": "volunteer-ngo-matching",
   "version": "1.0.0",
   "description": "AI-powered volunteer and NGO matching platform",
-  "main": "server.js",
+  "main": "server.cjs",
   "type": "commonjs",
   "scripts": {
     "dev": "nodemon server.cjs",
