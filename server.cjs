@@ -4,21 +4,6 @@ const { MongoClient, ObjectId } = require('mongodb');
 const axios = require('axios');
 require('dotenv').config();
 
-// Check for required environment variables
-if (!process.env.MONGODB_URI) {
-  console.error('❌ MONGODB_URI environment variable is not set');
-  console.log('Please create a .env file with your MongoDB connection string:');
-  console.log('MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/database');
-  process.exit(1);
-}
-
-if (!process.env.OPENAI_API_KEY) {
-  console.error('❌ OPENAI_API_KEY environment variable is not set');
-  console.log('Please add your OpenAI API key to the .env file:');
-  console.log('OPENAI_API_KEY=your_openai_api_key_here');
-  process.exit(1);
-}
-
 const app = express();
 
 // More explicit CORS configuration
