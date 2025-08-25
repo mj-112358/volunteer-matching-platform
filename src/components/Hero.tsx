@@ -22,6 +22,11 @@ const Hero: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navigateToPage = (page: string) => {
+    window.location.hash = page;
+    window.location.reload();
+  };
+
   return (
     <section id="home" ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-orange-25/30 to-amber-25/20 pt-20">
       {/* Floating Background Elements */}

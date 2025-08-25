@@ -7,7 +7,7 @@ const Impact: React.FC = () => {
 
   const stats = [
     { 
-      number: 3000, 
+      number: 3000,
       suffix: '+',
       label: 'Active Volunteers', 
       description: 'Students creating change across India',
@@ -16,7 +16,7 @@ const Impact: React.FC = () => {
       icon: Users
     },
     { 
-      number: 7200, 
+      number: 7200,
       suffix: '',
       label: 'Service Hours', 
       description: 'Hours of dedicated community service',
@@ -25,7 +25,7 @@ const Impact: React.FC = () => {
       icon: Clock
     },
     { 
-      number: 78, 
+      number: 78,
       suffix: '',
       label: 'Partner NGOs', 
       description: 'Organizations we collaborate with',
@@ -34,7 +34,7 @@ const Impact: React.FC = () => {
       icon: Award
     },
     { 
-      number: 25, 
+      number: 25,
       suffix: '',
       label: 'States Reached', 
       description: 'Across India and beyond',
@@ -44,33 +44,14 @@ const Impact: React.FC = () => {
     }
   ];
 
-  const [displayNumbers, setDisplayNumbers] = useState(stats.map(() => 0));
+  const [displayNumbers, setDisplayNumbers] = useState(stats.map(stat => stat.number));
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !countersStarted) {
-            setCountersStarted(true);
+          if (entry.isIntersecting) {
             entry.target.classList.add('animate-in');
-            
-            // Animate counters
-            stats.forEach((stat, index) => {
-              let current = 0;
-              const increment = stat.number / 100;
-              const timer = setInterval(() => {
-                current += increment;
-                if (current >= stat.number) {
-                  current = stat.number;
-                  clearInterval(timer);
-                }
-                setDisplayNumbers(prev => {
-                  const newNumbers = [...prev];
-                  newNumbers[index] = Math.floor(current);
-                  return newNumbers;
-                });
-              }, 20);
-            });
           }
         });
       },
@@ -82,7 +63,7 @@ const Impact: React.FC = () => {
     }
 
     return () => observer.disconnect();
-  }, [countersStarted]);
+  }, []);
 
   return (
     <section id="impact" ref={sectionRef} className="py-24 bg-gradient-to-b from-orange-25/30 via-white to-orange-50/40 relative overflow-hidden">
