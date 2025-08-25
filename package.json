@@ -5,8 +5,8 @@
   "main": "server.js",
   "type": "commonjs",
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js",
+    "dev": "nodemon server.cjs",
+    "start": "node server.cjs",
     "frontend": "cd frontend && python3 -m http.server 3001",
     "vite": "vite",
     "vite:dev": "vite --port 5173",
